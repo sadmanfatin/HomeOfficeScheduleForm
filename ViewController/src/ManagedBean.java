@@ -1028,11 +1028,29 @@ public class ManagedBean {
     public void submit(ActionEvent actionEvent) {
         // Add event code here...
      
-        if(this.getHodValue().getValue().equals("Not HOD") && this.getFirstSubmissionToHr().getValue().equals("y")){
-            this.showMessage("Change by Non-HOD user only allowed before first submission to HR by HOD", "error");
-            return;
+     
+          if(this.getHodValue().getValue().equals("Not HOD") && this.getFirstSubmissionToHr().getValue().equals("y")){
+              
+              int currentUser;
+              try {
+                 currentUser =  Integer.parseInt(appM.getEmployeeVO1().getCurrentRow().getAttribute("UserId").toString());
+            } catch (NullPointerException e) {
+                // TODO: Add catch code
+                e.printStackTrace();
+                currentUser=0;
+            }
+            
+              if (currentUser ==1545 ){
+                  // onln allow for user Syed Harun to save     (requirement provided by Shakhawat Hossain )
+                 // System.out.println("  entered in syed allowed for harun ");
+                 appM.getDBTransaction().commit();
+              }
+              else{
+                  this.showMessage("Change by Non-HOD user only allowed before first submission to HR by HOD", "error");
+                  return;
+              }
+
         }
-        
         
         appM.getDBTransaction().commit();
     }
