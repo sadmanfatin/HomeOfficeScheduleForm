@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MjHomeofficeScheduleVO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  SelectList="MjHomeofficeScheduleEO.SEQ_NO, 
+       MjHomeofficeScheduleEO.TDATE, 
+       MjHomeofficeScheduleEO.EMPLOYEE_NUMBER, 
+       MjHomeofficeScheduleEO.HOME_OFFICE_STATUS, 
+       MjHomeofficeScheduleEO.CREATION_DATE, 
+       MjHomeofficeScheduleEO.CREATED_BY, 
+       MjHomeofficeScheduleEO.LAST_UPDATE_DATE, 
+       MjHomeofficeScheduleEO.LAST_UPDATED_BY"
+  FromList="XX_MJ_HOMEOFFICE_SCHEDULE MjHomeofficeScheduleEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="MjHomeofficeScheduleEO"
+    Entity="model.entities.MjHomeofficeScheduleEO"/>
+  <ViewAttribute
+    Name="SeqNo"
+    PrecisionRule="true"
+    EntityAttrName="SeqNo"
+    EntityUsage="MjHomeofficeScheduleEO"
+    AliasName="SEQ_NO"/>
+  <ViewAttribute
+    Name="Tdate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Tdate"
+    EntityUsage="MjHomeofficeScheduleEO"
+    AliasName="TDATE"/>
+  <ViewAttribute
+    Name="EmployeeNumber"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeNumber"
+    EntityUsage="MjHomeofficeScheduleEO"
+    AliasName="EMPLOYEE_NUMBER"/>
+  <ViewAttribute
+    Name="HomeOfficeStatus"
+    PrecisionRule="true"
+    EntityAttrName="HomeOfficeStatus"
+    EntityUsage="MjHomeofficeScheduleEO"
+    AliasName="HOME_OFFICE_STATUS"/>
+  <ViewAttribute
+    Name="CreationDate"
+    PrecisionRule="true"
+    EntityAttrName="CreationDate"
+    EntityUsage="MjHomeofficeScheduleEO"
+    AliasName="CREATION_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="MjHomeofficeScheduleEO"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="LastUpdateDate"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdateDate"
+    EntityUsage="MjHomeofficeScheduleEO"
+    AliasName="LAST_UPDATE_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="MjHomeofficeScheduleEO"
+    AliasName="LAST_UPDATED_BY"/>
+</ViewObject>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="view1">
+    <page>/view1.jspx</page>
+    <input-page-parameter>
+      <from-value>#{param.ParamOrgId}</from-value>
+      <to-value>#{viewScope.OrgId}</to-value>
+    </input-page-parameter>
+    <input-page-parameter>
+      <from-value>#{param.ParamUserId}</from-value>
+      <to-value>#{viewScope.UserId}</to-value>
+    </input-page-parameter>
+    <input-page-parameter>
+      <from-value>#{param.ParamRespId}</from-value>
+      <to-value>#{viewScope.RespId}</to-value>
+    </input-page-parameter>
+    <input-page-parameter>
+      <from-value>#{param.ParamRespApplId}</from-value>
+      <to-value>#{viewScope.RespAppId}</to-value>
+    </input-page-parameter>
+  </view>
+  <managed-bean id="__4">
+    <managed-bean-name id="__2">ManagedBean</managed-bean-name>
+    <managed-bean-class id="__3">ManagedBean</managed-bean-class>
+    <managed-bean-scope id="__1">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__8">
+    <managed-bean-name id="__5">ViewScopeBean</managed-bean-name>
+    <managed-bean-class id="__7">ViewScopeBean</managed-bean-class>
+    <managed-bean-scope id="__6">view</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

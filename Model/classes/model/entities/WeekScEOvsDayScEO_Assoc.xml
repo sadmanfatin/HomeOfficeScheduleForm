@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="WeekScEOvsDayScEO_Assoc"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="EmpHomeOfficeWeekScEO"
+    Cardinality="1"
+    Source="true"
+    Owner="model.entities.EmpHomeOfficeWeekScEO"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="EmpHomeOfficeWeekScEO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.EmpHomeOfficeWeekScEO.EmpNo"/>
+      <Item Value="model.entities.EmpHomeOfficeWeekScEO.WeekId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="EmpHomeOfficeDayScEO"
+    Cardinality="-1"
+    Owner="model.entities.EmpHomeOfficeDayScEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="EmpHomeOfficeDayScEO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.EmpHomeOfficeDayScEO.EmployeeNumber"/>
+      <Item Value="model.entities.EmpHomeOfficeDayScEO.WeekId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

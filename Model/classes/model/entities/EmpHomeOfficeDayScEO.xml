@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmpHomeOfficeDayScEO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="XX_MJ_HOMEOFFICE_SCHEDULE"
+  AliasName="EmpHomeOfficeDayScEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="model.entities.EmpHomeOfficeDayScEOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|DML"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="SeqNo"
+    ColumnName="SEQ_NO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="XX_MJ_HOMEOFFICE_SCHEDULE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Tdate"
+    IsNotNull="true"
+    ColumnName="TDATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="XX_MJ_HOMEOFFICE_SCHEDULE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EmployeeNumber"
+    IsNotNull="true"
+    ColumnName="EMPLOYEE_NUMBER"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="XX_MJ_HOMEOFFICE_SCHEDULE"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="HomeOfficeStatus"
+    ColumnName="HOME_OFFICE_STATUS"
+    SQLType="NUMERIC"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XX_MJ_HOMEOFFICE_SCHEDULE"
+    Precision="20">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    ColumnName="CREATION_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="XX_MJ_HOMEOFFICE_SCHEDULE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="XX_MJ_HOMEOFFICE_SCHEDULE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    ColumnName="LAST_UPDATE_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="XX_MJ_HOMEOFFICE_SCHEDULE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    ColumnName="LAST_UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="XX_MJ_HOMEOFFICE_SCHEDULE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="HeadApproved"
+    Precision="2"
+    ColumnName="HEAD_APPROVED"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XX_MJ_HOMEOFFICE_SCHEDULE"
+    DefaultValue="y">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="WeekId"
+    ColumnName="WEEK_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="XX_MJ_HOMEOFFICE_SCHEDULE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="EmpHomeOfficeWeekScEO"
+    Association="model.associations.WeekScEOvsDayScEO_Assoc"
+    AssociationEnd="model.associations.WeekScEOvsDayScEO_Assoc.EmpHomeOfficeWeekScEO"
+    AssociationOtherEnd="model.associations.WeekScEOvsDayScEO_Assoc.EmpHomeOfficeDayScEO"
+    Type="model.entities.EmpHomeOfficeWeekScEOImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="XxMjHomeofficeSchedulePk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="XX_MJ_HOMEOFFICE_SCHEDULE_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.EmpHomeOfficeDayScEO.Tdate"/>
+      <Item Value="model.entities.EmpHomeOfficeDayScEO.EmployeeNumber"/>
+    </AttrArray>
+  </Key>
+</Entity>

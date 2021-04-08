@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HomeOfficeWeekWiseDeptEO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="XX_HOME_OFFICE_WEEK_WISE_DEPT"
+  AliasName="HomeOfficeWeekWiseDeptEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="model.entities.HomeOfficeWeekWiseDeptEOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Access|DML"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Department"
+    IsNotNull="true"
+    Precision="50"
+    ColumnName="DEPARTMENT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XX_HOME_OFFICE_WEEK_WISE_DEPT"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="WeekId"
+    IsNotNull="true"
+    ColumnName="WEEK_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="XX_HOME_OFFICE_WEEK_WISE_DEPT"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SubmittedToHead"
+    Precision="150"
+    ColumnName="SUBMITTED_TO_HEAD"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XX_HOME_OFFICE_WEEK_WISE_DEPT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SubmittedToHr"
+    Precision="150"
+    ColumnName="SUBMITTED_TO_HR"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XX_HOME_OFFICE_WEEK_WISE_DEPT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FirstSubmissionToHr"
+    Precision="2"
+    ColumnName="FIRST_SUBMISSION_TO_HR"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XX_HOME_OFFICE_WEEK_WISE_DEPT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="SysC001716631"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C001716631"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.HomeOfficeWeekWiseDeptEO.Department"/>
+      <Item Value="model.entities.HomeOfficeWeekWiseDeptEO.WeekId"/>
+    </AttrArray>
+  </Key>
+</Entity>

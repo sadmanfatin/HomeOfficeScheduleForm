@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmpHomeOfficeWeekScEO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="XX_EMP_HOME_OFFICE_WEEK_SC"
+  AliasName="EmpHomeOfficeWeekScEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="model.entities.EmpHomeOfficeWeekScEOImpl">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Init|Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="EmpNo"
+    IsNotNull="true"
+    ColumnName="EMP_NO"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="XX_EMP_HOME_OFFICE_WEEK_SC"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="D1"
+    Precision="15"
+    ColumnName="D1"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XX_EMP_HOME_OFFICE_WEEK_SC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="D2"
+    Precision="15"
+    ColumnName="D2"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XX_EMP_HOME_OFFICE_WEEK_SC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="D3"
+    Precision="15"
+    ColumnName="D3"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XX_EMP_HOME_OFFICE_WEEK_SC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="D4"
+    Precision="15"
+    ColumnName="D4"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XX_EMP_HOME_OFFICE_WEEK_SC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="D5"
+    Precision="15"
+    ColumnName="D5"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XX_EMP_HOME_OFFICE_WEEK_SC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="D6"
+    Precision="15"
+    ColumnName="D6"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XX_EMP_HOME_OFFICE_WEEK_SC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="WeekId"
+    IsNotNull="true"
+    ColumnName="WEEK_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="XX_EMP_HOME_OFFICE_WEEK_SC"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="D7"
+    Precision="15"
+    ColumnName="D7"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XX_EMP_HOME_OFFICE_WEEK_SC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Remarks"
+    Precision="200"
+    ColumnName="REMARKS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XX_EMP_HOME_OFFICE_WEEK_SC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdatedBy"
+    ColumnName="LAST_UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="XX_EMP_HOME_OFFICE_WEEK_SC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    ColumnName="LAST_UPDATE_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="XX_EMP_HOME_OFFICE_WEEK_SC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="HeadApproved"
+    Precision="2"
+    ColumnName="HEAD_APPROVED"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XX_EMP_HOME_OFFICE_WEEK_SC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="HomeOfficeWeekListEO"
+    Association="model.associations.HomeOfficeWeekListEOvsEmpHomeOfficeWeekScEO_Assoc"
+    AssociationEnd="model.associations.HomeOfficeWeekListEOvsEmpHomeOfficeWeekScEO_Assoc.HomeOfficeWeekListEO"
+    AssociationOtherEnd="model.associations.HomeOfficeWeekListEOvsEmpHomeOfficeWeekScEO_Assoc.EmpHomeOfficeWeekScEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="EmpHomeOfficeDayScEO"
+    Association="model.associations.WeekScEOvsDayScEO_Assoc"
+    AssociationEnd="model.associations.WeekScEOvsDayScEO_Assoc.EmpHomeOfficeDayScEO"
+    AssociationOtherEnd="model.associations.WeekScEOvsDayScEO_Assoc.EmpHomeOfficeWeekScEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="EmphomeofficeweeksceoPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="EMPHOMEOFFICEWEEKSCEO_PRIMARY_"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.EmpHomeOfficeWeekScEO.WeekId"/>
+      <Item Value="model.entities.EmpHomeOfficeWeekScEO.EmpNo"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_EmpHomeOfficeWeekScEO">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="WEEK_LIST_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_EMP_HOME_OFFICE_WEEK_SC_EO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entities.EmpHomeOfficeWeekScEO.WeekId"/>
+    </AttrArray>
+  </Key>
+</Entity>

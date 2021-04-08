@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EmpHomeOfficeDayScVO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery>
+    <![CDATA[SELECT EmpHomeOfficeDayScEO.SEQ_NO, 
+       EmpHomeOfficeDayScEO.TDATE, 
+       EmpHomeOfficeDayScEO.EMPLOYEE_NUMBER, 
+       EmpHomeOfficeDayScEO.HOME_OFFICE_STATUS, 
+       EmpHomeOfficeDayScEO.CREATION_DATE, 
+       EmpHomeOfficeDayScEO.CREATED_BY, 
+       EmpHomeOfficeDayScEO.LAST_UPDATE_DATE, 
+       EmpHomeOfficeDayScEO.LAST_UPDATED_BY, 
+       EmpHomeOfficeDayScEO.WEEK_ID, 
+       EmpHomeOfficeDayScEO.HEAD_APPROVED
+FROM XX_MJ_HOMEOFFICE_SCHEDULE EmpHomeOfficeDayScEO
+order by EmpHomeOfficeDayScEO.TDATE]]>
+  </SQLQuery>
+  <EntityUsage
+    Name="EmpHomeOfficeDayScEO"
+    Entity="model.entities.EmpHomeOfficeDayScEO"/>
+  <ViewAttribute
+    Name="SeqNo"
+    PrecisionRule="true"
+    EntityAttrName="SeqNo"
+    EntityUsage="EmpHomeOfficeDayScEO"
+    AliasName="SEQ_NO"/>
+  <ViewAttribute
+    Name="Tdate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Tdate"
+    EntityUsage="EmpHomeOfficeDayScEO"
+    AliasName="TDATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="model.views.EmpHomeOfficeDayScVO.Tdate_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.views.EmpHomeOfficeDayScVO.Tdate_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EmployeeNumber"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeNumber"
+    EntityUsage="EmpHomeOfficeDayScEO"
+    AliasName="EMPLOYEE_NUMBER"/>
+  <ViewAttribute
+    Name="HomeOfficeStatus"
+    PrecisionRule="true"
+    EntityAttrName="HomeOfficeStatus"
+    EntityUsage="EmpHomeOfficeDayScEO"
+    AliasName="HOME_OFFICE_STATUS"/>
+  <ViewAttribute
+    Name="CreationDate"
+    PrecisionRule="true"
+    EntityAttrName="CreationDate"
+    EntityUsage="EmpHomeOfficeDayScEO"
+    AliasName="CREATION_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="EmpHomeOfficeDayScEO"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="LastUpdateDate"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdateDate"
+    EntityUsage="EmpHomeOfficeDayScEO"
+    AliasName="LAST_UPDATE_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="EmpHomeOfficeDayScEO"
+    AliasName="LAST_UPDATED_BY"/>
+  <ViewAttribute
+    Name="WeekId"
+    PrecisionRule="true"
+    EntityAttrName="WeekId"
+    EntityUsage="EmpHomeOfficeDayScEO"
+    AliasName="WEEK_ID"/>
+  <ViewAttribute
+    Name="HeadApproved"
+    PrecisionRule="true"
+    EntityAttrName="HeadApproved"
+    EntityUsage="EmpHomeOfficeDayScEO"
+    AliasName="HEAD_APPROVED"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

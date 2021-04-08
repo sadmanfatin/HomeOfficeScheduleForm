@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DepartmentVOvsWeekWiseDeptVO_VL"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.viewlinks.DepartmentVOvsWeekWiseDeptVO_VL_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="DepartmentVO"
+    Cardinality="1"
+    Owner="model.views.DepartmentVO"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="DepartmentVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.views.DepartmentVO.Departments"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="HomeOfficeWeekWiseDeptVO"
+    Cardinality="-1"
+    Owner="model.views.HomeOfficeWeekWiseDeptVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="HomeOfficeWeekWiseDeptVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.views.HomeOfficeWeekWiseDeptVO.Department"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

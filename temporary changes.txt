@@ -1,0 +1,2 @@
+1 checkColumnEditable method returns true
+2. submit method empty check

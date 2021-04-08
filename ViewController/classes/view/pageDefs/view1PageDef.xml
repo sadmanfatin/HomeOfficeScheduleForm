@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.62.29" id="view1PageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variableUsage DataControl="AppModuleDataControl"
+                     Binds="EmpHomeOfficeWeekScVO1.variablesMap.p_employment_catagory"
+                     Name="ExecuteWithParams_p_employment_catagory"
+                     IsQueriable="false"/>
+    </variableIterator>
+    <iterator Binds="EmpHomeOfficeWeekScVO1" RangeSize="100"
+              DataControl="AppModuleDataControl"
+              id="EmpHomeOfficeWeekScVO1Iterator"/>
+    <searchRegion Binds="EmpHomeOfficeWeekScVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="EmpHomeOfficeWeekScVO1Query"/>
+    <iterator Binds="EmployeeVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="EmployeeVO1Iterator"/>
+    <iterator Binds="HomeOfficeWeekListVO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="HomeOfficeWeekListVO1Iterator"/>
+    <iterator Binds="DepartmentVO1" RangeSize="25"
+              DataControl="AppModuleDataControl" id="DepartmentVO1Iterator"/>
+    <invokeAction Binds="setSessionValues" id="setSession"
+                  Refresh="always"/>
+    <iterator Binds="HomeOfficeWeekWiseDeptVO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="HomeOfficeWeekWiseDeptVO1Iterator"/>
+    <iterator Binds="HomeOfficeWithNoValueLov1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="HomeOfficeWithNoValueLov1Iterator"/>
+    <iterator Binds="EmploymentCatagoryLov1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="EmploymentCatagoryLov1Iterator"/>
+    <iterator Binds="CopyToWeekListVO1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="CopyToWeekListVO1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="EmployeeVO1Iterator" id="FullName">
+      <AttrNames>
+        <Item Value="FullName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeVO1Iterator" id="EmpNo">
+      <AttrNames>
+        <Item Value="EmpNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeVO1Iterator" id="Dept">
+      <AttrNames>
+        <Item Value="Dept"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeeVO1Iterator" id="Position">
+      <AttrNames>
+        <Item Value="Position"/>
+      </AttrNames>
+    </attributeValues>
+    <tree
+          id="EmpHomeOfficeWeekScVO1"
+          IterBinding="EmpHomeOfficeWeekScVO1Iterator">
+      <nodeDefinition DefName="model.views.EmpHomeOfficeWeekScVO"
+                      Name="EmpHomeOfficeWeekScVO10">
+        <AttrNames>
+          <Item Value="D1"/>
+          <Item Value="D2"/>
+          <Item Value="D3"/>
+          <Item Value="D4"/>
+          <Item Value="D5"/>
+          <Item Value="D6"/>
+          <Item Value="D7"/>
+          <Item Value="Dept"/>
+          <Item Value="EmpNo"/>
+          <Item Value="FullName"/>
+          <Item Value="Org"/>
+          <Item Value="Position"/>
+          <Item Value="WeekId"/>
+          <Item Value="EmpWeeklyHomeOfficeCount"/>
+          <Item Value="SetAllDayValue"/>
+          <Item Value="Remarks"/>
+          <Item Value="EmpWeeklyCoOfficeCount"/>
+          <Item Value="HeadApproved"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="HomeOfficeWeekListVO1Iterator" ListOperMode="navigation"
+          ListIter="HomeOfficeWeekListVO1Iterator" id="HomeOfficeWeekListVO1"
+          DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="WeekRange"/>
+      </AttrNames>
+    </list>
+    <methodAction id="setSessionValues"
+                  InstanceName="AppModuleDataControl.dataProvider"
+                  DataControl="AppModuleDataControl"
+                  Action="invokeMethod" MethodName="setSessionValues"
+                  IsViewObjectMethod="false" RequiresUpdateModel="true">
+      <NamedData NDName="orgId" NDValue="#{viewScope.OrgId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="userId" NDValue="#{viewScope.UserId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="respId" NDValue="#{viewScope.RespId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="respAppId" NDValue="#{viewScope.RespAppId}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+    <attributeValues IterBinding="HomeOfficeWeekListVO1Iterator"
+                     id="D1HomeOfficeCount">
+      <AttrNames>
+        <Item Value="D1OfficeCount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HomeOfficeWeekListVO1Iterator" id="WeekId">
+      <AttrNames>
+        <Item Value="WeekId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HomeOfficeWeekListVO1Iterator"
+                     id="TotalEmployee">
+      <AttrNames>
+        <Item Value="TotalEmployee"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HomeOfficeWeekListVO1Iterator"
+                     id="D2OfficePercentage">
+      <AttrNames>
+        <Item Value="D2OfficePercentage"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HomeOfficeWeekListVO1Iterator"
+                     id="D3OfficePercentage">
+      <AttrNames>
+        <Item Value="D3OfficePercentage"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HomeOfficeWeekListVO1Iterator"
+                     id="D4OfficePercentage">
+      <AttrNames>
+        <Item Value="D4OfficePercentage"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HomeOfficeWeekListVO1Iterator"
+                     id="D5OfficePercentage">
+      <AttrNames>
+        <Item Value="D5OfficePercentage"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HomeOfficeWeekListVO1Iterator"
+                     id="D6OfficePercentage">
+      <AttrNames>
+        <Item Value="D6OfficePercentage"/>
+      </AttrNames>
+    </attributeValues>
+     <attributeValues IterBinding="HomeOfficeWeekListVO1Iterator"
+                     id="D2OfficeCount">
+      <AttrNames>
+        <Item Value="D2OfficeCount"/>
+      </AttrNames>
+    </attributeValues>
+     <attributeValues IterBinding="HomeOfficeWeekListVO1Iterator"
+                     id="D3OfficeCount">
+      <AttrNames>
+        <Item Value="D3OfficeCount"/>
+      </AttrNames>
+    </attributeValues>
+     <attributeValues IterBinding="HomeOfficeWeekListVO1Iterator"
+                     id="D4OfficeCount">
+      <AttrNames>
+        <Item Value="D4OfficeCount"/>
+      </AttrNames>
+    </attributeValues>
+     <attributeValues IterBinding="HomeOfficeWeekListVO1Iterator"
+                     id="D5OfficeCount">
+      <AttrNames>
+        <Item Value="D5OfficeCount"/>
+      </AttrNames>
+    </attributeValues>
+     <attributeValues IterBinding="HomeOfficeWeekListVO1Iterator"
+                     id="D6OfficeCount">
+      <AttrNames>
+        <Item Value="D6OfficeCount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HomeOfficeWeekWiseDeptVO1Iterator"
+                     id="SubmittedToHead">
+      <AttrNames>
+        <Item Value="SubmittedToHead"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HomeOfficeWeekWiseDeptVO1Iterator"
+                     id="SubmittedToHr">
+      <AttrNames>
+        <Item Value="SubmittedToHr"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="HomeOfficeWithNoValueLov1Iterator"
+          ListOperMode="navigation" ListIter="HomeOfficeWithNoValueLov1Iterator"
+          id="HomeOfficeWithNoValueLov1" DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="HomeOffice"/>
+      </AttrNames>
+    </list>
+    <attributeValues IterBinding="EmployeeVO1Iterator" id="HodValue">
+      <AttrNames>
+        <Item Value="HodValue"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HomeOfficeWeekListVO1Iterator"
+                     id="D1OfficeCount">
+      <AttrNames>
+        <Item Value="D1OfficeCount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="HomeOfficeWeekListVO1Iterator"
+                     id="D1OfficePercentage">
+      <AttrNames>
+        <Item Value="D1OfficePercentage"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="DepartmentVO1Iterator" ListOperMode="navigation"
+          ListIter="DepartmentVO1Iterator" id="DepartmentVO1"
+          DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="Departments"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="EmploymentCatagoryLov1Iterator" ListOperMode="navigation"
+          ListIter="EmploymentCatagoryLov1Iterator" id="EmploymentCatagoryLov1"
+          DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="EmploymentCatagory"/>
+      </AttrNames>
+    </list>
+    <attributeValues IterBinding="HomeOfficeWeekWiseDeptVO1Iterator"
+                     id="FirstSubmissionToHr">
+      <AttrNames>
+        <Item Value="FirstSubmissionToHr"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="CopyToWeekListVO1Iterator" ListOperMode="navigation"
+          ListIter="CopyToWeekListVO1Iterator" id="CopyToWeekListVO1"
+          DTSupportsMRU="true">
+      <AttrNames>
+        <Item Value="WeekRange"/>
+      </AttrNames>
+    </list>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>
