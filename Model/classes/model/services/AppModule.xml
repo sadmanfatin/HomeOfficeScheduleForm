@@ -55,6 +55,9 @@
   <ViewUsage
     Name="CopyToWeekListVO1"
     ViewObjectName="model.views.CopyToWeekListVO"/>
+  <ViewUsage
+    Name="HomeOffice2Lov1"
+    ViewObjectName="model.lov.HomeOffice2Lov"/>
   <ViewLinkUsage
     Name="HomeOfficeWeekListVOvsEmpHomeOfficeWeekScVO_VL1"
     ViewLinkObjectName="model.viewlinks.HomeOfficeWeekListVOvsEmpHomeOfficeWeekScVO_VL"
@@ -79,6 +82,25 @@
     SrcViewUsageName="model.services.AppModule.HomeOfficeWeekListVO1"
     DstViewUsageName="model.services.AppModule.HomeOfficeWeekWiseDeptVO1"
     Reversed="false"/>
+  <ClientInterface>
+    <Method
+      Name="setSessionValues">
+      <Return
+        Type="void"/>
+      <Parameter
+        Name="orgId"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="userId"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="respId"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="respAppId"
+        Type="java.lang.String"/>
+    </Method>
+  </ClientInterface>
   <ClientInterface>
     <Method
       Name="setSessionValues">

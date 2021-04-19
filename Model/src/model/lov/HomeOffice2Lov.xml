@@ -3,20 +3,24 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="HomeOfficeForSaturdayLov"
+  Name="HomeOffice2Lov"
   Version="11.1.1.62.29"
   InheritPersonalization="true"
   BindingStyle="OracleName"
   CustomQuery="true"
   PageIterMode="Full"
-  UseGlueCode="false">
+  UseGlueCode="false"
+  RowClass="model.lov.HomeOffice2LovRowImpl"
+  ComponentClass="model.lov.HomeOffice2LovImpl">
   <DesignTime>
     <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.lov.HomeOfficeForSaturdayLov_LABEL"/>
+        ResId="model.lov.HomeOffice2Lov_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <SQLQuery>
@@ -29,6 +33,7 @@ UNION
 SELECT 'Home Office' HOME_OFFICE , 4 RANKK FROM DUAL
 UNION
 SELECT 'Weekly Holiday' HOME_OFFICE , 5 RANKK FROM DUAL
+
 ORDER BY RANKK]]>
   </SQLQuery>
   <ViewAttribute

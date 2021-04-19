@@ -298,6 +298,16 @@ public class EmpHomeOfficeWeekScVORowImpl extends ViewRowImpl {
                 obj.setAttributeInternal(index(), value);
             }
         }
+        ,
+        HomeOffice2Lov1 {
+            public Object get(EmpHomeOfficeWeekScVORowImpl obj) {
+                return obj.getHomeOffice2Lov1();
+            }
+
+            public void put(EmpHomeOfficeWeekScVORowImpl obj, Object value) {
+                obj.setAttributeInternal(index(), value);
+            }
+        }
         ;
         private static AttributesEnum[] vals = null;
         private static int firstIndex = 0;
@@ -356,6 +366,7 @@ public class EmpHomeOfficeWeekScVORowImpl extends ViewRowImpl {
     public static final int HOMEOFFICELOV1 = AttributesEnum.HomeOfficeLov1.index();
     public static final int EMPLOYMENTCATAGORYLOV1 = AttributesEnum.EmploymentCatagoryLov1.index();
     public static final int HOMEOFFICEFORSATURDAYLOV1 = AttributesEnum.HomeOfficeForSaturdayLov1.index();
+    public static final int HOMEOFFICE2LOV1 = AttributesEnum.HomeOffice2Lov1.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -822,6 +833,13 @@ public class EmpHomeOfficeWeekScVORowImpl extends ViewRowImpl {
      */
     public RowSet getHomeOfficeForSaturdayLov1() {
         return (RowSet)getAttributeInternal(HOMEOFFICEFORSATURDAYLOV1);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> HomeOffice2Lov1.
+     */
+    public RowSet getHomeOffice2Lov1() {
+        return (RowSet)getAttributeInternal(HOMEOFFICE2LOV1);
     }
 
     /**
