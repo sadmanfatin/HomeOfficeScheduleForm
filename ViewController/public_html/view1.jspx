@@ -250,6 +250,124 @@
                                     id="cb14" visible="false"/>
                 </af:panelGroupLayout>
               </af:panelGroupLayout>
+              <af:table value="#{bindings.WeekScDummyVO1.collectionModel}"
+                        var="row"
+                        rows="#{bindings.WeekScDummyVO1.rangeSize}"
+                        emptyText="#{bindings.WeekScDummyVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                        fetchSize="#{bindings.WeekScDummyVO1.rangeSize}"
+                        rowBandingInterval="0"
+                        selectedRowKeys="#{bindings.WeekScDummyVO1.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.WeekScDummyVO1.collectionModel.makeCurrent}"
+                        rowSelection="single" id="t2"
+                        inlineStyle="height:25.0px;" styleClass="AFStretchWidth"
+                        partialTriggers="::cb1 ::cb2 ::soc32 ::soc2 ::soc3 ::cb7 ::cb11">
+                <af:column sortProperty="WeekId" sortable="false"
+                           id="c12" width="381"/>
+                <af:column sortProperty="D1" sortable="false"
+                      
+                           id="c9" width="130"
+                           binding="#{ManagedBean.allRowSelectorD1}">
+                  <af:selectOneChoice value="#{row.bindings.D1.inputValue}"
+                                      label="#{row.bindings.D1.label}"
+                                      required="#{bindings.WeekScDummyVO1.hints.D1.mandatory}"
+                                      shortDesc="#{bindings.WeekScDummyVO1.hints.D1.tooltip}"
+                                      id="soc16"
+                                      contentStyle="font-size:small;"
+                                      autoSubmit="true"
+                                      valueChangeListener="#{ManagedBean.allRowValueChangeListener}">
+                    <f:selectItems value="#{row.bindings.D1.items}" id="si13"/>
+                  </af:selectOneChoice>
+                </af:column>
+                <af:column sortProperty="D2" sortable="false"
+                       
+                           id="c18" width="130"
+                              binding="#{ManagedBean.allRowSelectorD2}">
+                  <af:selectOneChoice value="#{row.bindings.D2.inputValue}"
+                                      label="#{row.bindings.D2.label}"
+                                      required="#{bindings.WeekScDummyVO1.hints.D2.mandatory}"
+                                      shortDesc="#{bindings.WeekScDummyVO1.hints.D2.tooltip}"
+                                      id="soc15"
+                                      contentStyle="font-size:small;"
+                                      autoSubmit="true"
+                                      valueChangeListener="#{ManagedBean.allRowValueChangeListener}">
+                    <f:selectItems value="#{row.bindings.D2.items}" id="si18"/>
+                  </af:selectOneChoice>
+                </af:column>
+                <af:column sortProperty="D3" sortable="false"                     
+                           id="c17" width="130"
+                           binding="#{ManagedBean.allRowSelectorD3}">
+                  <af:selectOneChoice value="#{row.bindings.D3.inputValue}"
+                                      label="#{row.bindings.D3.label}"
+                                      required="#{bindings.WeekScDummyVO1.hints.D3.mandatory}"
+                                      shortDesc="#{bindings.WeekScDummyVO1.hints.D3.tooltip}"
+                                      id="soc12"
+                                      contentStyle="font-size:small;"
+                                      autoSubmit="true"
+                                      valueChangeListener="#{ManagedBean.allRowValueChangeListener}">
+                    <f:selectItems value="#{row.bindings.D3.items}" id="si17"/>
+                  </af:selectOneChoice>
+                </af:column>
+                <af:column sortProperty="D4" sortable="false"
+                         
+                           id="c10" width="130"
+                           binding="#{ManagedBean.allRowSelectorD4}">
+                  <af:selectOneChoice value="#{row.bindings.D4.inputValue}"
+                                      label="#{row.bindings.D4.label}"
+                                      required="#{bindings.WeekScDummyVO1.hints.D4.mandatory}"
+                                      shortDesc="#{bindings.WeekScDummyVO1.hints.D4.tooltip}"
+                                      id="soc13"
+                                      contentStyle="font-size:small;"
+                                      autoSubmit="true"
+                                      valueChangeListener="#{ManagedBean.allRowValueChangeListener}">
+                    <f:selectItems value="#{row.bindings.D4.items}" id="si16"/>
+                  </af:selectOneChoice>
+                </af:column>
+                <af:column sortProperty="D5" sortable="false"
+     
+                           id="c8" width="130"
+                           binding="#{ManagedBean.allRowSelectorD5}">
+                  <af:selectOneChoice value="#{row.bindings.D5.inputValue}"
+                                      label="#{row.bindings.D5.label}"
+                                      required="#{bindings.WeekScDummyVO1.hints.D5.mandatory}"
+                                      shortDesc="#{bindings.WeekScDummyVO1.hints.D5.tooltip}"
+                                      id="soc10"
+                                      contentStyle="font-size:small;"
+                                      autoSubmit="true"
+                                      valueChangeListener="#{ManagedBean.allRowValueChangeListener}">
+                    <f:selectItems value="#{row.bindings.D5.items}" id="si10"/>
+                  </af:selectOneChoice>
+                </af:column>
+                <af:column sortProperty="D6" sortable="false"
+                        
+                           id="c13" width="130"
+                           binding="#{ManagedBean.allRowSelectorD6}">
+                  <af:selectOneChoice value="#{row.bindings.D6.inputValue}"
+                                      label="#{row.bindings.D6.label}"
+                                      required="#{bindings.WeekScDummyVO1.hints.D6.mandatory}"
+                                      shortDesc="#{bindings.WeekScDummyVO1.hints.D6.tooltip}"
+                                      id="soc8"
+                                      contentStyle="font-size:small;"
+                                      autoSubmit="true"
+                                      valueChangeListener="#{ManagedBean.allRowValueChangeListener}">
+                    <f:selectItems value="#{row.bindings.D6.items}" id="si15"/>
+                  </af:selectOneChoice>
+                </af:column>
+                <af:column sortProperty="D7" sortable="false"
+       
+                           id="c16" width="130"
+                           binding="#{ManagedBean.allRowSelectorD7}">
+                  <af:selectOneChoice value="#{row.bindings.D7.inputValue}"
+                                      label="#{row.bindings.D7.label}"
+                                      required="#{bindings.WeekScDummyVO1.hints.D7.mandatory}"
+                                      shortDesc="#{bindings.WeekScDummyVO1.hints.D7.tooltip}"
+                                      id="soc14"
+                                      contentStyle="font-size:small;"
+                                      autoSubmit="true"
+                                      valueChangeListener="#{ManagedBean.allRowValueChangeListener}">
+                    <f:selectItems value="#{row.bindings.D7.items}" id="si12"/>
+                  </af:selectOneChoice>
+                </af:column>
+              </af:table>
               <af:table value="#{bindings.EmpHomeOfficeWeekScVO1.collectionModel}"
                         var="row"
                         rows="#{bindings.EmpHomeOfficeWeekScVO1.rangeSize}"
@@ -368,7 +486,7 @@
                 <af:column headerText="#{bindings.EmpHomeOfficeWeekScVO1.hints.D1.label}"
                            id="c6" binding="#{ManagedBean.d1}" sortable="true"
                            filterable="true" sortProperty="D1" align="center"
-                           headerNoWrap="true" width="105">
+                           headerNoWrap="true" width="130">
                   <af:selectOneChoice value="#{row.bindings.D1.inputValue}"
                                       label="#{row.bindings.D1.label}"
                                       required="#{bindings.EmpHomeOfficeWeekScVO1.hints.D1.mandatory}"
@@ -376,9 +494,9 @@
                                       id="soc1"
                                       partialTriggers="soc4"
                                       valueChangeListener="#{ManagedBean.officeTypeValueChangeListener}"
-                                      autoSubmit="true"
-                                      contentStyle="#{row.bindings.D1.attributeValue == 'Weekly Holiday' ?  'color:rgb(198,0,0)' :  row.bindings.D1.attributeValue == 'Holiday' ?  'color:rgb(198,0,0)' :   row.bindings.D1.attributeValue == 'CO Office' ? 'color:rgb(0,120,55)' :  row.bindings.D1.attributeValue == 'Home Office' ?  'color:rgb(2,71,144)' :  'color:Black' };font-size:small">
-                    <f:selectItems value="#{row.bindings.D1.items}" id="si1"/>
+                                      contentStyle="#{row.bindings.D1.attributeValue == 'Weekly Holiday' ?  'color:rgb(198,0,0)' :  row.bindings.D1.attributeValue == 'Public Holiday' ?  'color:rgb(198,0,0)':  row.bindings.D1.attributeValue == 'Festival Holiday' ?  'color:rgb(198,0,0)' :   row.bindings.D1.attributeValue == 'CO Office' ? 'color:rgb(0,120,55)' :  row.bindings.D1.attributeValue == 'Home Office' ?  'color:rgb(2,71,144)' :  'color:Black' };font-size:small"  
+                                     autoSubmit="true" >
+                              <f:selectItems value="#{row.bindings.D1.items}" id="si1"/>
                   </af:selectOneChoice>
                   <f:facet name="footer">
                     <af:group id="group1">
@@ -408,14 +526,14 @@
                 <af:column sortProperty="D2" filterable="true" sortable="true"
                            headerText="#{bindings.EmpHomeOfficeWeekScVO1.hints.D2.label}"
                            id="c37" binding="#{ManagedBean.d2}" align="center"
-                           headerNoWrap="true" width="105">
+                           headerNoWrap="true" width="130">
                   <af:selectOneChoice value="#{row.bindings.D2.inputValue}"
                                       label="#{row.bindings.D2.label}"
                                       required="#{bindings.EmpHomeOfficeWeekScVO1.hints.D2.mandatory}"
                                       shortDesc="#{bindings.EmpHomeOfficeWeekScVO1.hints.D2.tooltip}"
                                       id="soc28" autoSubmit="true"
                                       readOnly="false"
-                                      contentStyle="#{row.bindings.D2.attributeValue == 'Weekly Holiday' ?  'color:rgb(198,0,0)' :  row.bindings.D2.attributeValue == 'Holiday' ?  'color:rgb(198,0,0)' :   row.bindings.D2.attributeValue == 'CO Office' ? 'color:rgb(0,120,55)' :  row.bindings.D2.attributeValue == 'Home Office' ?  'color:rgb(2,71,144)' :  'color:Black' };font-size:small"
+                                      contentStyle="#{row.bindings.D2.attributeValue == 'Weekly Holiday' ?  'color:rgb(198,0,0)' :  row.bindings.D2.attributeValue == 'Public Holiday' ?  'color:rgb(198,0,0)':  row.bindings.D2.attributeValue == 'Festival Holiday' ?  'color:rgb(198,0,0)' :   row.bindings.D2.attributeValue == 'CO Office' ? 'color:rgb(0,120,55)' :  row.bindings.D2.attributeValue == 'Home Office' ?  'color:rgb(2,71,144)' :  'color:Black' };font-size:small"
                                       partialTriggers="soc4"
                                       valueChangeListener="#{ManagedBean.officeTypeValueChangeListener}">
                     <f:selectItems value="#{row.bindings.D2.items}" id="si6"/>
@@ -448,15 +566,15 @@
                 <af:column sortProperty="D3" filterable="true" sortable="true"
                            headerText="#{bindings.EmpHomeOfficeWeekScVO1.hints.D3.label}"
                            id="c11" binding="#{ManagedBean.d3}" align="center"
-                           headerNoWrap="true" width="105">
+                           headerNoWrap="true" width="130">
                   <af:selectOneChoice value="#{row.bindings.D3.inputValue}"
                                       label="#{row.bindings.D3.label}"
                                       required="#{bindings.EmpHomeOfficeWeekScVO1.hints.D3.mandatory}"
                                       shortDesc="#{bindings.EmpHomeOfficeWeekScVO1.hints.D3.tooltip}"
                                       id="soc11" autoSubmit="true"
                                       partialTriggers="soc4"
-                                      valueChangeListener="#{ManagedBean.officeTypeValueChangeListener}"
-                                      contentStyle="#{row.bindings.D3.attributeValue == 'Weekly Holiday' ?  'color:rgb(198,0,0)' :  row.bindings.D3.attributeValue == 'Holiday' ?  'color:rgb(198,0,0)' :   row.bindings.D3.attributeValue == 'CO Office' ? 'color:rgb(0,120,55)' :  row.bindings.D3.attributeValue == 'Home Office' ?  'color:rgb(2,71,144)' :  'color:Black' };font-size:small">
+                                      contentStyle="#{row.bindings.D3.attributeValue == 'Weekly Holiday' ?  'color:rgb(198,0,0)' :  row.bindings.D3.attributeValue == 'Public Holiday' ?  'color:rgb(198,0,0)':  row.bindings.D3.attributeValue == 'Festival Holiday' ?  'color:rgb(198,0,0)' :   row.bindings.D3.attributeValue == 'CO Office' ? 'color:rgb(0,120,55)' :  row.bindings.D3.attributeValue == 'Home Office' ?  'color:rgb(2,71,144)' :  'color:Black' };font-size:small"
+                                      valueChangeListener="#{ManagedBean.officeTypeValueChangeListener}">
                     <f:selectItems value="#{row.bindings.D3.items}" id="si3"/>
                   </af:selectOneChoice>
                   <f:facet name="footer">
@@ -487,14 +605,14 @@
                 <af:column sortProperty="D4" filterable="true" sortable="true"
                            headerText="#{bindings.EmpHomeOfficeWeekScVO1.hints.D4.label}"
                            id="c33" binding="#{ManagedBean.d4}" align="center"
-                           headerNoWrap="true" width="105">
+                           headerNoWrap="true" width="130">
                   <af:selectOneChoice value="#{row.bindings.D4.inputValue}"
                                       label="#{row.bindings.D4.label}"
                                       required="#{bindings.EmpHomeOfficeWeekScVO1.hints.D4.mandatory}"
                                       shortDesc="#{bindings.EmpHomeOfficeWeekScVO1.hints.D4.tooltip}"
                                       id="soc20" autoSubmit="true"
                                       disabled="false"
-                                      contentStyle="#{row.bindings.D4.attributeValue == 'Weekly Holiday' ?  'color:rgb(198,0,0)' :  row.bindings.D4.attributeValue == 'Holiday' ?  'color:rgb(198,0,0)' :   row.bindings.D4.attributeValue == 'CO Office' ? 'color:rgb(0,120,55)' :  row.bindings.D4.attributeValue == 'Home Office' ?  'color:rgb(2,71,144)' :  'color:Black' };font-size:small"
+                                      contentStyle="#{row.bindings.D4.attributeValue == 'Weekly Holiday' ?  'color:rgb(198,0,0)' :  row.bindings.D4.attributeValue == 'Public Holiday' ?  'color:rgb(198,0,0)':  row.bindings.D4.attributeValue == 'Festival Holiday' ?  'color:rgb(198,0,0)' :   row.bindings.D4.attributeValue == 'CO Office' ? 'color:rgb(0,120,55)' :  row.bindings.D4.attributeValue == 'Home Office' ?  'color:rgb(2,71,144)' :  'color:Black' };font-size:small"
                                       partialTriggers="soc4"
                                       valueChangeListener="#{ManagedBean.officeTypeValueChangeListener}">
                     <f:selectItems value="#{row.bindings.D4.items}" id="si26"/>
@@ -527,13 +645,13 @@
                 <af:column sortProperty="D5" filterable="true" sortable="true"
                            headerText="#{bindings.EmpHomeOfficeWeekScVO1.hints.D5.label}"
                            id="c15" binding="#{ManagedBean.d5}" align="center"
-                           headerNoWrap="true" width="105">
+                           headerNoWrap="true" width="130">
                   <af:selectOneChoice value="#{row.bindings.D5.inputValue}"
                                       label="#{row.bindings.D5.label}"
                                       required="#{bindings.EmpHomeOfficeWeekScVO1.hints.D5.mandatory}"
                                       shortDesc="#{bindings.EmpHomeOfficeWeekScVO1.hints.D5.tooltip}"
                                       id="soc9" autoSubmit="true"
-                                      contentStyle="#{row.bindings.D5.attributeValue == 'Weekly Holiday' ?  'color:rgb(198,0,0)' :  row.bindings.D5.attributeValue == 'Holiday' ?  'color:rgb(198,0,0)' :   row.bindings.D5.attributeValue == 'CO Office' ? 'color:rgb(0,120,55)' :  row.bindings.D5.attributeValue == 'Home Office' ?  'color:rgb(2,71,144)' :  'color:Black' };font-size:small"
+                                      contentStyle="#{row.bindings.D5.attributeValue == 'Weekly Holiday' ?  'color:rgb(198,0,0)' :  row.bindings.D5.attributeValue == 'Public Holiday' ?  'color:rgb(198,0,0)':  row.bindings.D5.attributeValue == 'Festival Holiday' ?  'color:rgb(198,0,0)' :   row.bindings.D5.attributeValue == 'CO Office' ? 'color:rgb(0,120,55)' :  row.bindings.D5.attributeValue == 'Home Office' ?  'color:rgb(2,71,144)' :  'color:Black' };font-size:small"
                                       partialTriggers="soc4"
                                       valueChangeListener="#{ManagedBean.officeTypeValueChangeListener}">
                     <f:selectItems value="#{row.bindings.D5.items}" id="si14"/>
@@ -568,13 +686,13 @@
                 <af:column sortProperty="D6" filterable="true" sortable="true"
                            headerText="#{bindings.EmpHomeOfficeWeekScVO1.hints.D6.label}"
                            id="c14" binding="#{ManagedBean.d6}" align="center"
-                           headerNoWrap="true" width="105">
+                           headerNoWrap="true" width="130">
                   <af:selectOneChoice value="#{row.bindings.D6.inputValue}"
                                       label="#{row.bindings.D6.label}"
                                       required="#{bindings.EmpHomeOfficeWeekScVO1.hints.D6.mandatory}"
                                       shortDesc="#{bindings.EmpHomeOfficeWeekScVO1.hints.D6.tooltip}"
                                       id="soc22" autoSubmit="true"
-                                      contentStyle="#{row.bindings.D6.attributeValue == 'Weekly Holiday' ?  'color:rgb(198,0,0)' :  row.bindings.D6.attributeValue == 'Holiday' ?  'color:rgb(198,0,0)' :   row.bindings.D6.attributeValue == 'CO Office' ? 'color:rgb(0,120,55)' :  row.bindings.D6.attributeValue == 'Home Office' ?  'color:rgb(2,71,144)' :  'color:Black' };font-size:small"
+                                      contentStyle="#{row.bindings.D6.attributeValue == 'Weekly Holiday' ?  'color:rgb(198,0,0)' :  row.bindings.D6.attributeValue == 'Public Holiday' ?  'color:rgb(198,0,0)':  row.bindings.D6.attributeValue == 'Festival Holiday' ?  'color:rgb(198,0,0)' :   row.bindings.D6.attributeValue == 'CO Office' ? 'color:rgb(0,120,55)' :  row.bindings.D6.attributeValue == 'Home Office' ?  'color:rgb(2,71,144)' :  'color:Black' };font-size:small"
                                       partialTriggers="soc4"
                                       valueChangeListener="#{ManagedBean.officeTypeValueChangeListener}"
                                       changed="false">
@@ -606,7 +724,7 @@
                   </f:facet>
                 </af:column>
                 <af:column headerText="#{bindings.EmpHomeOfficeWeekScVO1.hints.D7.label}"
-                           id="c1" width="125" align="center" sortable="true"
+                           id="c1" width="130" align="center" sortable="true"
                            filterable="true" sortProperty="D7"
                            binding="#{ManagedBean.d7}" headerNoWrap="true">
                   <af:selectOneChoice value="#{row.bindings.D7.inputValue}"
@@ -615,7 +733,7 @@
                                       shortDesc="#{bindings.EmpHomeOfficeWeekScVO1.hints.D7.tooltip}"
                                       id="soc7" autoSubmit="true"
                                       partialTriggers="soc4"
-                                      contentStyle="#{row.bindings.D7.attributeValue == 'Weekly Holiday' ?  'color:rgb(198,0,0)' :  row.bindings.D7.attributeValue == 'Holiday' ?  'color:rgb(198,0,0)' :   row.bindings.D7.attributeValue == 'CO Office' ? 'color:rgb(0,120,55)' :  row.bindings.D7.attributeValue == 'Home Office' ?  'color:rgb(2,71,144)' :  'color:Black' };font-size:small"
+                                      contentStyle="#{row.bindings.D7.attributeValue == 'Weekly Holiday' ?  'color:rgb(198,0,0)' :  row.bindings.D7.attributeValue == 'Public Holiday' ?  'color:rgb(198,0,0)':  row.bindings.D7.attributeValue == 'Festival Holiday' ?  'color:rgb(198,0,0)' :   row.bindings.D7.attributeValue == 'CO Office' ? 'color:rgb(0,120,55)' :  row.bindings.D7.attributeValue == 'Home Office' ?  'color:rgb(2,71,144)' :  'color:Black' };font-size:small"
                                       valueChangeListener="#{ManagedBean.officeTypeValueChangeListener}">
                     <f:selectItems value="#{row.bindings.D7.items}" id="si9"/>
                   </af:selectOneChoice>

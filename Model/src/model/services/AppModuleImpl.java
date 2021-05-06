@@ -5,11 +5,12 @@ import javax.faces.context.FacesContext;
 
 import javax.servlet.http.HttpSession;
 
+import model.lov.HomeOffice2LovImpl;
+
 import model.services.common.AppModule;
 
-import model.views.DepartmentVOImpl;
-import model.views.EmpHomeOfficeWeekScVOImpl;
 
+import model.views.DepartmentVOImpl;
 import model.views.HomeOfficeWeekListVOImpl;
 
 import model.views.HomeOfficeWeekWiseDeptVOImpl;
@@ -63,8 +64,8 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
                                  String respAppId) {
               
             // System.out.println("========================== in set session values"); 
-          //   if(userId==null) userId= "5219"; 
-         //  if(respId==null) respId= "52870";
+             if(userId==null) userId= "5219"; 
+           if(respId==null) respId= "52870";
           
         
               
@@ -179,5 +180,21 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
      */
     public ViewObjectImpl getCopyToWeekListVO1() {
         return (ViewObjectImpl)findViewObject("CopyToWeekListVO1");
+    }
+
+    /**
+     * Container's getter for HomeOffice2Lov1.
+     * @return HomeOffice2Lov1
+     */
+    public HomeOffice2LovImpl getHomeOffice2Lov1() {
+        return (HomeOffice2LovImpl)findViewObject("HomeOffice2Lov1");
+    }
+
+    /**
+     * Container's getter for WeekScDummyVO1.
+     * @return WeekScDummyVO1
+     */
+    public ViewObjectImpl getWeekScDummyVO1() {
+        return (ViewObjectImpl)findViewObject("WeekScDummyVO1");
     }
 }

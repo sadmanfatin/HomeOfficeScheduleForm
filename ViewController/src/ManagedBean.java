@@ -69,7 +69,13 @@ public class ManagedBean {
     private RichColumn d5;
     private RichColumn d6;
     private RichColumn d7;
-  
+    private RichColumn allRowSelectorD1;
+    private RichColumn allRowSelectorD2;
+    private RichColumn allRowSelectorD3;
+    private RichColumn allRowSelectorD4;
+    private RichColumn allRowSelectorD5;
+    private RichColumn allRowSelectorD6;
+    private RichColumn allRowSelectorD7;
     public java.util.Date currentDate;
     public int currentHour;
     private DateFormat columnHeaderFormatter =
@@ -93,7 +99,7 @@ public class ManagedBean {
     private RichCommandButton copyFromPrevWeekButton;
     private RichSelectOneChoice weekCopyTo;
     private RichCommandButton copyFromWeekButton;
-  
+
 
 
     public ManagedBean() {
@@ -201,8 +207,7 @@ public class ManagedBean {
             restrictCopyFromWeek();
 
             filterCopyToWeekListVo();
-            
-            
+                        
             createCurrentWeekAndDaySc();
             
             updateHolidayForCurrentWeek();
@@ -460,10 +465,12 @@ public class ManagedBean {
                 date = this.columnHeaderFormatter.parse(value);
            
                 columnEditable = checkColumnDateEditable(date);
+
+                restrictColumnChoiceList(key, columnEditable);  
+                String allRowSelectorColumnKey ="AllRowSelector"+key;
+                restrictColumnChoiceList(allRowSelectorColumnKey, columnEditable);
+              
                 
-
-                restrictColumnChoiceList(key, columnEditable);
-
 
             } catch (Exception e) {
                 
@@ -572,17 +579,17 @@ public class ManagedBean {
     public void officeTypeValueChangeListener(ValueChangeEvent valueChangeEvent) {
         // Add event code here...
 
-                RichColumn Richcolumn;
-                Richcolumn = (RichColumn)valueChangeEvent.getComponent().getParent();
-                String columnName, dateValue;
-                int choice =Integer.parseInt(valueChangeEvent.getNewValue().toString())  ;
-                
-                columnName=  Richcolumn.getSortProperty(); // get the attribute name of view object
-                dateValue= Richcolumn.getHeaderText();
-                String choiceVlaue = this.getChoiceListValue(choice ,dateValue  );
-                 
-                 
-                ViewObject weekScVo = appM.getEmpHomeOfficeWeekScVO1();
+//                RichColumn Richcolumn;
+//                Richcolumn = (RichColumn)valueChangeEvent.getComponent().getParent();
+//                String columnName, dateValue;
+//                int choice =Integer.parseInt(valueChangeEvent.getNewValue().toString())  ;
+//                
+//                columnName=  Richcolumn.getSortProperty(); // get the attribute name of view object
+//                dateValue= Richcolumn.getHeaderText();
+//                String choiceVlaue = this.getChoiceListValue(choice ,dateValue  );
+//                 
+//                 
+//                ViewObject weekScVo = appM.getEmpHomeOfficeWeekScVO1();
         
 
                 AdfFacesContext.getCurrentInstance().addPartialTarget(this.d1);
@@ -801,20 +808,22 @@ public class ManagedBean {
 
     private void restrictColumnChoiceList(String key, boolean columnEditable) {
         boolean readOnlyValue = !columnEditable;
-        RichColumn richColumn = null;
+        RichColumn richColumn = null ;
         RichSelectOneChoice choiceList = null;
         List<UIComponent> childdrenUiComponents = null;
-        String methodName;
-        java.lang.reflect.Method method = null;
+        String methodName ;
+        java.lang.reflect.Method method = null  ;
         methodName = "get" + key;
-
+              
         try {
             method = this.getClass().getMethod(methodName);
+          
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
         try {
             richColumn = (RichColumn)method.invoke(this);
+        
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -824,15 +833,15 @@ public class ManagedBean {
             if (uic.getClass().getSimpleName().equals("RichSelectOneChoice")) {
                 choiceList = (RichSelectOneChoice)uic;
                 choiceList.setReadOnly(readOnlyValue);
-                
+          
             }
         }
     }
 
                                        
     private void updateWeekScVoRow(Row empHomeOfficeWeekScVoRow, String homeOfficeCohiceListValue) {
-            //   System.out.println("====================== updateWeekScVoRow");
-               
+          //     System.out.println("====================== updateWeekScVoRow ======================");
+       // System.out.println("====================== homeOfficeCohiceListValue :"+ homeOfficeCohiceListValue);
         Iterator it = this.dayWiseDate.keySet().iterator();
         //  java.lang.reflect.Method method;
         String key, value;
@@ -850,6 +859,7 @@ public class ManagedBean {
             String weekScCurrentDayValue = null; 
             try {
               weekScCurrentDayValue = empHomeOfficeWeekScVoRow.getAttribute(key).toString();
+              
             } catch (Exception e) {
                 
                 weekScCurrentDayValue = "";
@@ -868,7 +878,7 @@ public class ManagedBean {
                 if (columnEditable) {
                     
                     //initial plan : saturday and holiday will not be changed by set all day button
-                    if( !key.equals("D7") && !weekScCurrentDayValue.equals("Holiday")  ){
+                    if( !weekScCurrentDayValue.contains("Holiday")  ){
 
                         empHomeOfficeWeekScVoRow.setAttribute(key, homeOfficeCohiceListValue);
                         //System.out.println(" row.getAttribute(key)= " + empHomeOfficeWeekScVoRow.getAttribute(key));                    
@@ -938,6 +948,15 @@ public class ManagedBean {
             break;
         case 3:
             cohiseListValue = "Home Office";
+            break;
+        case 4:
+            cohiseListValue = "Festival Holiday";
+            break;
+        case 5:
+            cohiseListValue = "Public Holiday";
+            break;
+        case 6:
+            cohiseListValue = "Weekly Holiday";
             break;
         default:
         }
@@ -1711,9 +1730,7 @@ public class ManagedBean {
     }
     
     private void updateHolidayForCurrentWeek() {
-          
-          
-          
+                  
           
           ViewObject weekListVo = appM.getHomeOfficeWeekListVO1();
               
@@ -1740,8 +1757,7 @@ public class ManagedBean {
           
               
           }
-          
-          
+        
           
           System.out.println("department "+ department );
           
@@ -1771,11 +1787,98 @@ public class ManagedBean {
           
           
           AdfFacesContext.getCurrentInstance().addPartialTarget(this.getEmployeeHomeOfficeDaysOfMonthTable());
-          
-          
-          
+      
           
       }
-    
-    
+
+
+    public void allRowValueChangeListener(ValueChangeEvent valueChangeEvent) {
+        // Add event code here...
+        RichColumn richColumn = (RichColumn)valueChangeEvent.getComponent().getParent();
+              String columnName, dateValue, choiceValue;
+              int choice ;
+              
+           
+              try {
+                     choice = Integer.parseInt(valueChangeEvent.getNewValue().toString())  ;
+                } catch (Exception e) {
+                    // TODO: Add catch code
+                    choice = 0;
+                   // e.printStackTrace();
+                }
+              columnName=  richColumn.getSortProperty(); // get the attribute name of view object
+             // dateValue= richColumn.getHeaderText();
+             
+           choiceValue =  this.getChoiceListValue(choice);
+             
+              ViewObject  empHomeOfficeWeekScVo = appM.getEmpHomeOfficeWeekScVO1();
+            Row[] empHomeOfficeWeekScVoRows = empHomeOfficeWeekScVo.getAllRowsInRange();
+       // Row empHomeOfficeWeekScVoRow;
+           for(Row empHomeOfficeWeekScVoRow : empHomeOfficeWeekScVoRows){
+            
+            empHomeOfficeWeekScVoRow.setAttribute(columnName, choiceValue);
+
+          
+
+        }
+        AdfFacesContext.getCurrentInstance().addPartialTarget(this.getEmployeeHomeOfficeDaysOfMonthTable());     
+  
+    }
+
+
+    public void setAllRowSelectorD1(RichColumn allRowSelectorD1) {
+        this.allRowSelectorD1 = allRowSelectorD1;
+    }
+
+    public RichColumn getAllRowSelectorD1() {
+        return allRowSelectorD1;
+    }
+
+    public void setAllRowSelectorD2(RichColumn allRowSelectorD2) {
+        this.allRowSelectorD2 = allRowSelectorD2;
+    }
+
+    public RichColumn getAllRowSelectorD2() {
+        return allRowSelectorD2;
+    }
+
+    public void setAllRowSelectorD3(RichColumn allRowSelectorD3) {
+        this.allRowSelectorD3 = allRowSelectorD3;
+    }
+
+    public RichColumn getAllRowSelectorD3() {
+        return allRowSelectorD3;
+    }
+
+    public void setAllRowSelectorD4(RichColumn allRowSelectorD4) {
+        this.allRowSelectorD4 = allRowSelectorD4;
+    }
+
+    public RichColumn getAllRowSelectorD4() {
+        return allRowSelectorD4;
+    }
+
+    public void setAllRowSelectorD5(RichColumn allRowSelectorD5) {
+        this.allRowSelectorD5 = allRowSelectorD5;
+    }
+
+    public RichColumn getAllRowSelectorD5() {
+        return allRowSelectorD5;
+    }
+
+    public void setAllRowSelectorD6(RichColumn allRowSelectorD6) {
+        this.allRowSelectorD6 = allRowSelectorD6;
+    }
+
+    public RichColumn getAllRowSelectorD6() {
+        return allRowSelectorD6;
+    }
+
+    public void setAllRowSelectorD7(RichColumn allRowSelectorD7) {
+        this.allRowSelectorD7 = allRowSelectorD7;
+    }
+
+    public RichColumn getAllRowSelectorD7() {
+        return allRowSelectorD7;
+    }
 }

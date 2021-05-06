@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="WeekScDummyVO"
+  Version="11.1.1.62.29"
+  InheritPersonalization="true"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  FetchMode="FETCH_AS_NEEDED"
+  RangeSize="100"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="HomeOfficeLov1"
+    ViewObjectName="model.lov.HomeOfficeLov"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HomeOffice2Lov1"
+    ViewObjectName="model.lov.HomeOffice2Lov"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_D1"
+    ListVOName="HomeOfficeLov1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_D1_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="D1"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="HomeOffice"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="HomeOffice"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_D2"
+    ListVOName="HomeOfficeLov1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_D2_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="D2"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="HomeOffice"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="HomeOffice"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_D3"
+    ListVOName="HomeOfficeLov1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_D3_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="D3"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="HomeOffice"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="HomeOffice"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_D4"
+    ListVOName="HomeOfficeLov1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    
+    MRUCount="0"
+    NullValueId="LOV_D4_LOVUIHints_NullValueId">
+    <AttrArray Name="AttrNames">
+      <Item Value="D4"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="HomeOffice"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="HomeOffice"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_D5"
+    ListVOName="HomeOfficeLov1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_D5_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="D5"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="HomeOffice"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="HomeOffice"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_D6"
+    ListVOName="HomeOffice2Lov1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_D6_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="D6"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="HomeOffice"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="HomeOffice"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_D7"
+    ListVOName="HomeOffice2Lov1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_D7_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="D7"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="HomeOffice"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="HomeOffice"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <SQLQuery>
+    <![CDATA[SELECT null D1, 
+       null D2, 
+       null D3, 
+       null D4, 
+       null D5, 
+       null D6, 
+       null D7,                
+       0 EMP_NO,  
+       0 WEEK_ID 
+from DUAL]]>
+  </SQLQuery>
+  <ViewAttribute
+    Name="D1"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="D1"
+    Expression="D1"
+    SQLType="VARCHAR"
+    LOVName="LOV_D1">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="D2"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="D2"
+    Expression="D2"
+    SQLType="VARCHAR"
+    LOVName="LOV_D2">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="D3"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="D3"
+    Expression="D3"
+    SQLType="VARCHAR"
+    LOVName="LOV_D3">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="D4"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="D4"
+    Expression="D4"
+    SQLType="VARCHAR"
+    LOVName="LOV_D4">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="D5"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="D5"
+    Expression="D5"
+    SQLType="VARCHAR"
+    LOVName="LOV_D5">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="D6"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="D6"
+    Expression="D6"
+    SQLType="VARCHAR"
+    LOVName="LOV_D6">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="D7"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="D7"
+    Expression="D7"
+    SQLType="VARCHAR"
+    LOVName="LOV_D7">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EmpNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="EMP_NO"
+    Expression="EMP_NO"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="WeekId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="WEEK_ID"
+    Expression="WEEK_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+</ViewObject>

@@ -81,7 +81,7 @@
          <string v="HomeOfficeScheduleForm_application1"/>
       </list>
       <value n="Security-Deployment-Migrate-Users-And-Groups-Key" v="false"/>
-      <value n="Weblogic-JDBC-Auto-Sync-Key" v="true"/>
+      <value n="Weblogic-JDBC-Auto-Sync-Key" v="false"/>
    </hash>
    <hash n="oracle.mds.internal.dt.ide.CustOptions">
       <list n="customizationLibraries">

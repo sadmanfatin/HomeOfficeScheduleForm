@@ -37,6 +37,11 @@
     <iterator Binds="CopyToWeekListVO1" RangeSize="25"
               DataControl="AppModuleDataControl"
               id="CopyToWeekListVO1Iterator"/>
+    <iterator Binds="EmpHomeOfficeWeekScVOEx1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="EmpHomeOfficeWeekScVOEx1Iterator"/>
+    <iterator Binds="WeekScDummyVO1" RangeSize="10"
+              DataControl="AppModuleDataControl" id="WeekScDummyVO1Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="EmployeeVO1Iterator" id="FullName">
@@ -249,5 +254,21 @@
     </list>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
             DataControl="AppModuleDataControl"/>
+    <tree IterBinding="WeekScDummyVO1Iterator" id="WeekScDummyVO1">
+      <nodeDefinition DefName="model.views.WeekScDummyVO"
+                      Name="WeekScDummyVO10">
+        <AttrNames>
+          <Item Value="D1"/>
+          <Item Value="D2"/>
+          <Item Value="D3"/>
+          <Item Value="D4"/>
+          <Item Value="D5"/>
+          <Item Value="D6"/>
+          <Item Value="D7"/>
+          <Item Value="EmpNo"/>
+          <Item Value="WeekId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

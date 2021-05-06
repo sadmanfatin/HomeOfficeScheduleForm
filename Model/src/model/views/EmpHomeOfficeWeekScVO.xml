@@ -45,6 +45,10 @@
     Name="HomeOffice2Lov1"
     ViewObjectName="model.lov.HomeOffice2Lov"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="HomeOfficeWithNoValueLov1"
+    ViewObjectName="model.lov.HomeOfficeWithNoValueLov"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_D1"
     ListVOName="HomeOfficeLov1"
@@ -136,24 +140,6 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_SetAllDayValue"
-    ListVOName="HomeOfficeLov1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    NullValueId="LOV_SetAllDayValue_LOVUIHints_NullValueId"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="SetAllDayValue"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="HomeOffice"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="HomeOffice"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_EmploymentCategory"
     ListVOName="EmploymentCatagoryLov1"
     ListRangeSize="-1"
@@ -190,11 +176,29 @@
     Name="LOV_D6"
     ListVOName="HomeOffice2Lov1"
     ListRangeSize="-1"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    NullValueFlag="none"
+    NullValueId="LOV_D6_LOVUIHints_NullValueId"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="D6"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="HomeOffice"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="HomeOffice"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SetAllDayValue"
+    ListVOName="HomeOfficeWithNoValueLov1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    NullValueId="LOV_SetAllDayValue_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SetAllDayValue"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="HomeOffice"/>
