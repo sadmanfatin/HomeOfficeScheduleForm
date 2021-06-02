@@ -78,6 +78,8 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
             userSession.setAttribute("userId", userId);
             userSession.setAttribute("orgId", orgId);
             userSession.setAttribute("respId", respId);
+            userSession.setAttribute("empPeopleGroupId", getCurrentEmpPeopleGroupId());
+         
             
             
      }
@@ -196,5 +198,9 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
      */
     public ViewObjectImpl getWeekScDummyVO1() {
         return (ViewObjectImpl)findViewObject("WeekScDummyVO1");
+    }
+
+    public Object getCurrentEmpPeopleGroupId() {
+        return this.getEmployeeVO1().first().getAttribute("PeopleGroupId");
     }
 }

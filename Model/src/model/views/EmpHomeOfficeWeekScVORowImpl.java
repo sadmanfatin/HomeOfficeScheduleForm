@@ -229,6 +229,16 @@ public class EmpHomeOfficeWeekScVORowImpl extends ViewRowImpl {
             }
         }
         ,
+        PeopleGroupId {
+            public Object get(EmpHomeOfficeWeekScVORowImpl obj) {
+                return obj.getPeopleGroupId();
+            }
+
+            public void put(EmpHomeOfficeWeekScVORowImpl obj, Object value) {
+                obj.setPeopleGroupId((Number)value);
+            }
+        }
+        ,
         EmpWeeklyHomeOfficeCount {
             public Object get(EmpHomeOfficeWeekScVORowImpl obj) {
                 return obj.getEmpWeeklyHomeOfficeCount();
@@ -369,6 +379,7 @@ public class EmpHomeOfficeWeekScVORowImpl extends ViewRowImpl {
     public static final int EMAILADDRESS = AttributesEnum.EmailAddress.index();
     public static final int HODVALUE = AttributesEnum.HodValue.index();
     public static final int EMPLOYMENTCATEGORY = AttributesEnum.EmploymentCategory.index();
+    public static final int PEOPLEGROUPID = AttributesEnum.PeopleGroupId.index();
     public static final int EMPWEEKLYHOMEOFFICECOUNT = AttributesEnum.EmpWeeklyHomeOfficeCount.index();
     public static final int SETALLDAYVALUE = AttributesEnum.SetAllDayValue.index();
     public static final int EMPWEEKLYCOOFFICECOUNT = AttributesEnum.EmpWeeklyCoOfficeCount.index();
@@ -770,6 +781,22 @@ public class EmpHomeOfficeWeekScVORowImpl extends ViewRowImpl {
      */
     public void setEmploymentCategory(String value) {
         setAttributeInternal(EMPLOYMENTCATEGORY, value);
+    }
+
+    /**
+     * Gets the attribute value for the calculated attribute PeopleGroupId.
+     * @return the PeopleGroupId
+     */
+    public Number getPeopleGroupId() {
+        return (Number) getAttributeInternal(PEOPLEGROUPID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for the calculated attribute PeopleGroupId.
+     * @param value value to set the  PeopleGroupId
+     */
+    public void setPeopleGroupId(Number value) {
+        setAttributeInternal(PEOPLEGROUPID, value);
     }
 
     /**
