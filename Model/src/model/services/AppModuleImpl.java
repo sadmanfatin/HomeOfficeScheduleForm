@@ -63,26 +63,29 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
     public void setSessionValues(String orgId, String userId, String respId,
                                  String respAppId) {
               
-            // System.out.println("========================== in set session values"); 
-             if(userId==null) userId= "5219"; 
-           if(respId==null) respId= "52870";
-          
-        
-              
-    if (userId != null) {
+        // System.out.println("========================== in set session values");
+       
+        // userId = "5219";
+        // if(respId==null) respId= "52869";  // 'Home Office All Dept'  responsibility
+
+        if (userId != null) {
             FacesContext fctx = FacesContext.getCurrentInstance();
-           ExternalContext ectx = fctx.getExternalContext();
-           HttpSession userSession = (HttpSession)ectx.getSession(false);
-            
-         
+            ExternalContext ectx = fctx.getExternalContext();
+            HttpSession userSession = (HttpSession)ectx.getSession(false);
+
+
             userSession.setAttribute("userId", userId);
             userSession.setAttribute("orgId", orgId);
             userSession.setAttribute("respId", respId);
-            userSession.setAttribute("empPeopleGroupId", getCurrentEmpPeopleGroupId());
-         
-            
-            
-     }
+
+            if (respId != null && respId.equals("52870")) {
+                // if responsibility is 'Home Office All Dept' then ignore current employee's people group id
+                userSession.setAttribute("empPeopleGroupId", "1");
+            } else {
+                userSession.setAttribute("empPeopleGroupId",getCurrentEmpPeopleGroupId());
+            }
+
+        }
         
     }
 
