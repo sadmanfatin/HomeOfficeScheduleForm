@@ -65,8 +65,8 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
               
         // System.out.println("========================== in set session values");
        
-        // userId = "5219";
-        // if(respId==null) respId= "52869";  // 'Home Office All Dept'  responsibility
+          userId = "5219";
+          respId= "52870";  // 'Home Office All Dept'  responsibility
 
         if (userId != null) {
             FacesContext fctx = FacesContext.getCurrentInstance();
