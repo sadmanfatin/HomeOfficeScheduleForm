@@ -29,6 +29,18 @@
     Kind="where"
     Type="java.lang.String"
     DefaultValue="Management"/>
+  <Variable
+    Name="p_people_group_id"
+    Kind="where"
+    Type="java.lang.String">
+    <TransientExpression><![CDATA[adf.context.sessionScope.empPeopleGroupId]]></TransientExpression>
+  </Variable>
+  <Variable
+    Name="p_resp_id"
+    Kind="where"
+    Type="java.lang.String">
+    <TransientExpression><![CDATA[adf.context.sessionScope.respId]]></TransientExpression>
+  </Variable>
   <ViewAccessor
     Name="HomeOfficeLov1"
     ViewObjectName="model.lov.HomeOfficeLov"
@@ -229,11 +241,14 @@
        COE.ORG,
        COE.EMAIL_ADDRESS,
          COE.HOD_VALUE,
-COE.EMPLOYMENT_CATEGORY
+COE.EMPLOYMENT_CATEGORY,
+COE.PEOPLE_GROUP_ID
 FROM XX_EMP_HOME_OFFICE_WEEK_SC EMPHOMEOFFICEWEEKSCEO ,    XX_HOME_OFFICE_WEEK_LIST HWL,  APPS.CO_EMPLOYEE COE
 WHERE EMPHOMEOFFICEWEEKSCEO.EMP_NO = COE.EMP_NO
 AND HWL.WEEK_ID = EMPHOMEOFFICEWEEKSCEO.WEEK_ID
-AND COE.EMPLOYMENT_CATEGORY = :p_employment_catagory
+AND COE.EMPLOYMENT_CATEGORY = :p_employment_catagory 
+AND ( CASE WHEN :p_resp_id = 52870 THEN 1 
+ELSE COE.PEOPLE_GROUP_ID END) = :p_people_group_id
 AND   HWL.END_DATE BETWEEN EFFECTIVE_START_DATE AND EFFECTIVE_END_DATE
 ORDER BY  COE.GRADE_ID  , EMPHOMEOFFICEWEEKSCEO.EMP_NO , EMPHOMEOFFICEWEEKSCEO.WEEK_ID]]>
   </SQLQuery>
@@ -519,6 +534,22 @@ ORDER BY  COE.GRADE_ID  , EMPHOMEOFFICEWEEKSCEO.EMP_NO , EMPHOMEOFFICEWEEKSCEO.W
           Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PeopleGroupId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="15"
+    Scale="0"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="PEOPLE_GROUP_ID"
+    Expression="PEOPLE_GROUP_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="16"/>
+    </DesignTime>
   </ViewAttribute>
   <ViewAttribute
     Name="EmpWeeklyHomeOfficeCount"

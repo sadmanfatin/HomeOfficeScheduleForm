@@ -40,7 +40,8 @@ USER_ID,
 EFFECTIVE_START_DATE,
 EFFECTIVE_END_DATE,
 HOD_VALUE,
-EMAIL_ADDRESS
+EMAIL_ADDRESS,
+PEOPLE_GROUP_ID
 FROM APPS.CO_EMPLOYEE 
 WHERE 1=1
 AND  sysdate BETWEEN EFFECTIVE_START_DATE AND EFFECTIVE_END_DATE
@@ -272,6 +273,22 @@ AND USER_ID = :P_USER_ID]]>
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PeopleGroupId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="15"
+    Scale="0"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="PEOPLE_GROUP_ID"
+    Expression="PEOPLE_GROUP_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="16"/>
     </DesignTime>
   </ViewAttribute>
   <ViewLinkAccessor

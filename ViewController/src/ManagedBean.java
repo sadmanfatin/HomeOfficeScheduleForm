@@ -1309,7 +1309,7 @@ public class ManagedBean {
     public void clearAllEmpValueForWeek(ActionEvent actionEvent) {
         // Add event code here...
             
-        setValueForAllEmpAllDay(null);    
+        setValueForAllEmpAllDay("CO Office");    
             
        
     }
