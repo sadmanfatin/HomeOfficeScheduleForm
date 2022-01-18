@@ -29,18 +29,6 @@
     Kind="where"
     Type="java.lang.String"
     DefaultValue="Management"/>
-  <Variable
-    Name="p_people_group_id"
-    Kind="where"
-    Type="java.lang.String">
-    <TransientExpression><![CDATA[adf.context.sessionScope.empPeopleGroupId]]></TransientExpression>
-  </Variable>
-  <Variable
-    Name="p_resp_id"
-    Kind="where"
-    Type="java.lang.String">
-    <TransientExpression><![CDATA[adf.context.sessionScope.respId]]></TransientExpression>
-  </Variable>
   <ViewAccessor
     Name="HomeOfficeLov1"
     ViewObjectName="model.lov.HomeOfficeLov"
@@ -247,8 +235,8 @@ FROM XX_EMP_HOME_OFFICE_WEEK_SC EMPHOMEOFFICEWEEKSCEO ,    XX_HOME_OFFICE_WEEK_L
 WHERE EMPHOMEOFFICEWEEKSCEO.EMP_NO = COE.EMP_NO
 AND HWL.WEEK_ID = EMPHOMEOFFICEWEEKSCEO.WEEK_ID
 AND COE.EMPLOYMENT_CATEGORY = :p_employment_catagory 
-AND ( CASE WHEN :p_resp_id = 52870 THEN 1 
-ELSE COE.PEOPLE_GROUP_ID END) = :p_people_group_id
+--AND ( CASE WHEN :p_resp_id = 52870 THEN 1 
+--ELSE COE.PEOPLE_GROUP_ID END) = :p_people_group_id
 AND   HWL.END_DATE BETWEEN EFFECTIVE_START_DATE AND EFFECTIVE_END_DATE
 ORDER BY  COE.GRADE_ID  , EMPHOMEOFFICEWEEKSCEO.EMP_NO , EMPHOMEOFFICEWEEKSCEO.WEEK_ID]]>
   </SQLQuery>
