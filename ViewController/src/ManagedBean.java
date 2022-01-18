@@ -1682,7 +1682,7 @@ public class ManagedBean {
         
         weekScVo.executeQuery();
         
-        
+        appM.getHomeOfficeWeekWiseDeptVO1().executeQuery();
         
         AdfFacesContext.getCurrentInstance().addPartialTarget(this.getEmployeeHomeOfficeDaysOfMonthTable());
         
