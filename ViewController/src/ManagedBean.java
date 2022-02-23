@@ -1673,7 +1673,7 @@ public class ManagedBean {
           
            cs.execute();
             cs.close();
-        appM.getDBTransaction().commit();
+     //   appM.getDBTransaction().commit();
 
         } catch (Exception e) {
            e.printStackTrace();
@@ -1775,7 +1775,7 @@ public class ManagedBean {
             
              cs.execute();
               cs.close();
-          appM.getDBTransaction().commit();
+        //  appM.getDBTransaction().commit();
 
           } catch (Exception e) {
              e.printStackTrace();
