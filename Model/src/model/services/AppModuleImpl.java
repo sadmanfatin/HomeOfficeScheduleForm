@@ -206,4 +206,12 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
     public Object getCurrentEmpPeopleGroupId() {
         return this.getEmployeeVO1().first().getAttribute("PeopleGroupId");
     }
+
+    /**
+     * Container's getter for HomeOfficeWeekWiseDeptVO2.
+     * @return HomeOfficeWeekWiseDeptVO2
+     */
+    public HomeOfficeWeekWiseDeptVOImpl getHomeOfficeWeekWiseDeptVO2() {
+        return (HomeOfficeWeekWiseDeptVOImpl)findViewObject("HomeOfficeWeekWiseDeptVO2");
+    }
 }

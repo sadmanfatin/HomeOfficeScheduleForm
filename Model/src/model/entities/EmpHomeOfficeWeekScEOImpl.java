@@ -13,7 +13,9 @@ import oracle.adf.share.ADFContext;
 
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
+import oracle.jbo.Row;
 import oracle.jbo.RowIterator;
+import oracle.jbo.ViewObject;
 import oracle.jbo.domain.Date;
 import oracle.jbo.domain.Number;
 import oracle.jbo.server.AttributeDefImpl;
@@ -566,10 +568,21 @@ public class EmpHomeOfficeWeekScEOImpl extends EntityImpl {
             // TODO: Add catch code
             e1.printStackTrace();
         }
+        String currentDept = (String)this.getAppModuleImpl().getDepartmentVO1().getCurrentRow().getAttribute("Departments");
+         
+        
+        
+        Key  key = new  Key(new Object[]{ currentDept, this.getWeekId()});
+        
         
         String hodValue = (String)this.getAppModuleImpl().getEmployeeVO1().getCurrentRow().getAttribute("HodValue");
         
         
+        ViewObject weekWiseDeptVo2 =  this.getAppModuleImpl().getHomeOfficeWeekWiseDeptVO2();
+        
+        Row[]  weekWiseDeptVo2Rows = weekWiseDeptVo2.findByKey(key, 1);    
+         Row weewWiseDeptVo2Row = weekWiseDeptVo2Rows[0];
+         
         //  System.out.println("Document No -->" + getSrNoString());
         
         if (DML_UPDATE == operation) {
@@ -583,11 +596,11 @@ public class EmpHomeOfficeWeekScEOImpl extends EntityImpl {
                 
                 if(hodValue != null &&   hodValue.equals("HOD")){
                    
-                    this.getAppModuleImpl().getHomeOfficeWeekWiseDeptVO1().getCurrentRow().setAttribute("SubmittedToHr", "n");
+                   weewWiseDeptVo2Row.setAttribute("SubmittedToHr", "n");
                 }
                 else{
-                    this.getAppModuleImpl().getHomeOfficeWeekWiseDeptVO1().getCurrentRow().setAttribute("SubmittedToHead", "n");
-                     this.getAppModuleImpl().getHomeOfficeWeekWiseDeptVO1().getCurrentRow().setAttribute("SubmittedToHr", "n");
+                   weewWiseDeptVo2Row.setAttribute("SubmittedToHead", "n");
+                     weewWiseDeptVo2Row.setAttribute("SubmittedToHr", "n");
                 }
               
             
