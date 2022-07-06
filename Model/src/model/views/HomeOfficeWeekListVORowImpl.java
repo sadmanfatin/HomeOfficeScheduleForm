@@ -83,16 +83,6 @@ public class HomeOfficeWeekListVORowImpl extends ViewRowImpl {
             }
         }
         ,
-        WeekOfYear {
-            public Object get(HomeOfficeWeekListVORowImpl obj) {
-                return obj.getWeekOfYear();
-            }
-
-            public void put(HomeOfficeWeekListVORowImpl obj, Object value) {
-                obj.setWeekOfYear((String)value);
-            }
-        }
-        ,
         D1OfficeCount {
             public Object get(HomeOfficeWeekListVORowImpl obj) {
                 return obj.getD1OfficeCount();
@@ -308,7 +298,6 @@ public class HomeOfficeWeekListVORowImpl extends ViewRowImpl {
     public static final int ENDDATE = AttributesEnum.EndDate.index();
     public static final int WEEKRANGE = AttributesEnum.WeekRange.index();
     public static final int ISOWEEKNUMBER = AttributesEnum.IsoWeekNumber.index();
-    public static final int WEEKOFYEAR = AttributesEnum.WeekOfYear.index();
     public static final int D1OFFICECOUNT = AttributesEnum.D1OfficeCount.index();
     public static final int D2OFFICECOUNT = AttributesEnum.D2OfficeCount.index();
     public static final int D3OFFICECOUNT = AttributesEnum.D3OfficeCount.index();
@@ -421,21 +410,6 @@ public class HomeOfficeWeekListVORowImpl extends ViewRowImpl {
         setAttributeInternal(ISOWEEKNUMBER, value);
     }
 
-    /**
-     * Gets the attribute value for the calculated attribute WeekOfYear.
-     * @return the WeekOfYear
-     */
-    public String getWeekOfYear() {
-        return (String) getAttributeInternal(WEEKOFYEAR);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for the calculated attribute WeekOfYear.
-     * @param value value to set the  WeekOfYear
-     */
-    public void setWeekOfYear(String value) {
-        setAttributeInternal(WEEKOFYEAR, value);
-    }
 
     /**
      * Gets the attribute value for the calculated attribute D1OfficeCount.

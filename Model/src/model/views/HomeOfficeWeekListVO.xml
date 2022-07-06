@@ -44,8 +44,8 @@
        HomeOfficeWeekListEO.START_DATE, 
        HomeOfficeWeekListEO.END_DATE,
        TO_CHAR (START_DATE+1 , 'IW')|| ' - '|| TO_CHAR(START_DATE , 'MON dd, yyyy')||' - '||TO_CHAR(END_DATE , 'MON dd, yyyy')  WEEK_RANGE ,      
-       TO_CHAR (START_DATE+1 , 'IW') ISO_WEEK_NUMBER , -- week number according to iso standard but starting from sunday instead of monday 
-       TO_CHAR (START_DATE+1 , 'WW') WEEK_OF_YEAR       
+       HomeOfficeWeekListEO.ISO_WEEK_NUMBER -- week number according to iso standard but starting from sunday instead of monday 
+           
      
 FROM XX_HOME_OFFICE_WEEK_LIST HomeOfficeWeekListEO
 WHERE 1=1
@@ -99,21 +99,6 @@ ORDER BY HomeOfficeWeekListEO.WEEK_ID]]>
     ColumnType="VARCHAR2"
     AliasName="ISO_WEEK_NUMBER"
     Expression="ISO_WEEK_NUMBER"
-    SQLType="VARCHAR">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="2"/>
-    </DesignTime>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="WeekOfYear"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Precision="2"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    AliasName="WEEK_OF_YEAR"
-    Expression="WEEK_OF_YEAR"
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="2"/>
