@@ -220,6 +220,7 @@
        EMPHOMEOFFICEWEEKSCEO.WEEK_ID, 
        EMPHOMEOFFICEWEEKSCEO.REMARKS,
        EMPHOMEOFFICEWEEKSCEO.HEAD_APPROVED,
+    EMPHOMEOFFICEWEEKSCEO.SEND_MAIL,
        COE.FULL_NAME,
        COE.GRADE_ID ,
        COE.POSITION,
@@ -367,6 +368,12 @@ ORDER BY  COE.GRADE_ID  , EMPHOMEOFFICEWEEKSCEO.EMP_NO , EMPHOMEOFFICEWEEKSCEO.W
     EntityAttrName="HeadApproved"
     EntityUsage="EmpHomeOfficeWeekScEO"
     AliasName="HEAD_APPROVED"/>
+  <ViewAttribute
+    Name="SendMail"
+    PrecisionRule="true"
+    EntityAttrName="SendMail"
+    EntityUsage="EmpHomeOfficeWeekScEO"
+    AliasName="SEND_MAIL"/>
   <ViewAttribute
     Name="FullName"
     IsUpdateable="false"

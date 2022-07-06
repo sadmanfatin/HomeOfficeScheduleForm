@@ -129,6 +129,16 @@ public class EmpHomeOfficeWeekScVORowImpl extends ViewRowImpl {
             }
         }
         ,
+        SendMail {
+            public Object get(EmpHomeOfficeWeekScVORowImpl obj) {
+                return obj.getSendMail();
+            }
+
+            public void put(EmpHomeOfficeWeekScVORowImpl obj, Object value) {
+                obj.setSendMail((String)value);
+            }
+        }
+        ,
         FullName {
             public Object get(EmpHomeOfficeWeekScVORowImpl obj) {
                 return obj.getFullName();
@@ -369,6 +379,7 @@ public class EmpHomeOfficeWeekScVORowImpl extends ViewRowImpl {
     public static final int WEEKID = AttributesEnum.WeekId.index();
     public static final int REMARKS = AttributesEnum.Remarks.index();
     public static final int HEADAPPROVED = AttributesEnum.HeadApproved.index();
+    public static final int SENDMAIL = AttributesEnum.SendMail.index();
     public static final int FULLNAME = AttributesEnum.FullName.index();
     public static final int GRADEID = AttributesEnum.GradeId.index();
     public static final int POSITION = AttributesEnum.Position.index();
@@ -827,6 +838,22 @@ public class EmpHomeOfficeWeekScVORowImpl extends ViewRowImpl {
      */
     public void setEmpWeeklyCoOfficeCount(Number value) {
         setAttributeInternal(EMPWEEKLYCOOFFICECOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for SEND_MAIL using the alias name SendMail.
+     * @return the SEND_MAIL
+     */
+    public String getSendMail() {
+        return (String) getAttributeInternal(SENDMAIL);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for SEND_MAIL using the alias name SendMail.
+     * @param value value to set the SEND_MAIL
+     */
+    public void setSendMail(String value) {
+        setAttributeInternal(SENDMAIL, value);
     }
 
     /**

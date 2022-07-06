@@ -165,6 +165,16 @@ public class EmpHomeOfficeWeekScEOImpl extends EntityImpl {
             }
         }
         ,
+        SendMail {
+            public Object get(EmpHomeOfficeWeekScEOImpl obj) {
+                return obj.getSendMail();
+            }
+
+            public void put(EmpHomeOfficeWeekScEOImpl obj, Object value) {
+                obj.setSendMail((String)value);
+            }
+        }
+        ,
         HomeOfficeWeekListEO {
             public Object get(EmpHomeOfficeWeekScEOImpl obj) {
                 return obj.getHomeOfficeWeekListEO();
@@ -227,6 +237,7 @@ public class EmpHomeOfficeWeekScEOImpl extends EntityImpl {
     public static final int LASTUPDATEDBY = AttributesEnum.LastUpdatedBy.index();
     public static final int LASTUPDATEDATE = AttributesEnum.LastUpdateDate.index();
     public static final int HEADAPPROVED = AttributesEnum.HeadApproved.index();
+    public static final int SENDMAIL = AttributesEnum.SendMail.index();
     public static final int HOMEOFFICEWEEKLISTEO = AttributesEnum.HomeOfficeWeekListEO.index();
     public static final int EMPHOMEOFFICEDAYSCEO = AttributesEnum.EmpHomeOfficeDayScEO.index();
 
@@ -470,6 +481,22 @@ public class EmpHomeOfficeWeekScEOImpl extends EntityImpl {
      */
     public void setHeadApproved(String value) {
         setAttributeInternal(HEADAPPROVED, value);
+    }
+
+    /**
+     * Gets the attribute value for SendMail, using the alias name SendMail.
+     * @return the SendMail
+     */
+    public String getSendMail() {
+        return (String)getAttributeInternal(SENDMAIL);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for SendMail.
+     * @param value value to set the SendMail
+     */
+    public void setSendMail(String value) {
+        setAttributeInternal(SENDMAIL, value);
     }
 
     /**

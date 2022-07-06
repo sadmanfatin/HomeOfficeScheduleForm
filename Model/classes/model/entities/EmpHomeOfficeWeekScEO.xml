@@ -173,6 +173,18 @@
       <Attr Name="_DisplaySize" Value="2"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="SendMail"
+    Precision="5"
+    ColumnName="SEND_MAIL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XX_EMP_HOME_OFFICE_WEEK_SC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="HomeOfficeWeekListEO"
     Association="model.associations.HomeOfficeWeekListEOvsEmpHomeOfficeWeekScEO_Assoc"

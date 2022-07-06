@@ -200,7 +200,7 @@
                                   partialTriggers="t1 cb2 it10" partialSubmit="true"
                                   binding="#{ManagedBean.submitToHrButton}"
                                   inlineStyle=" color:Black;font-size:small;"
-                                  visible="#{bindings.HodValue.inputValue=='HOD'}"/>
+                                  visible="#{true or bindings.HodValue.inputValue=='HOD'}"/>
               </af:panelGroupLayout>
               <af:panelGroupLayout id="pgl7" layout="horizontal"
                                    inlineStyle="border-style:solid; border-width:thin; background-color:rgb(248,248,265); border-color:rgb(198,198,198); padding:5.0px;">
@@ -262,7 +262,7 @@
                         inlineStyle="height:25.0px;" styleClass="AFStretchWidth"
                         partialTriggers="::cb1 ::cb2 ::soc32 ::soc2 ::soc3 ::cb7 ::cb11">
                 <af:column sortProperty="WeekId" sortable="false"
-                           id="c12" width="381"/>
+                           id="c12" width="440" displayIndex="-1"/>
                 <af:column sortProperty="D1" sortable="false"
                       
                            id="c9" width="130"
@@ -385,45 +385,27 @@
                         disableColumnReordering="true" autoHeightRows="19"
                         width="100%" contentDelivery="immediate"
                         clientComponent="true">
-                <af:column sortProperty="EmpNo" filterable="true"
-                           sortable="true" headerText="Employee No" id="c35"
-                           width="45" frozen="true" align="center">
-                  <af:inputText value="#{row.bindings.EmpNo.inputValue}"
-                                label="#{bindings.EmpHomeOfficeWeekScVO1.hints.EmpNo.label}"
-                                required="#{bindings.EmpHomeOfficeWeekScVO1.hints.EmpNo.mandatory}"
-                                columns="#{bindings.EmpHomeOfficeWeekScVO1.hints.EmpNo.displayWidth}"
-                                maximumLength="#{bindings.EmpHomeOfficeWeekScVO1.hints.EmpNo.precision}"
-                                shortDesc="#{bindings.EmpHomeOfficeWeekScVO1.hints.EmpNo.tooltip}"
-                                id="it2" readOnly="true"
-                                contentStyle="color:Black;font-size:small;">
-                    <f:validator binding="#{row.bindings.EmpNo.validator}"/>
+                <af:column headerText="Mail To"
+                           id="c19" align="center" width="40">
+                  <af:selectBooleanCheckbox value="#{row.bindings.SendMail.inputValue}"
+                                            label="#{row.bindings.SendMail.label}"
+                                            shortDesc="#{bindings.EmpHomeOfficeWeekScVO1.hints.SendMail.tooltip}"
+                                            id="sbc1" autoSubmit="true"/>
+                </af:column>
+                <af:column headerText="Emp No"
+                           id="c4" width="40" align="center">
+                  <af:outputText value="#{row.EmpNo}" id="ot1"
+                                 inlineStyle="font-size:small">
                     <af:convertNumber groupingUsed="false"
                                       pattern="#{bindings.EmpHomeOfficeWeekScVO1.hints.EmpNo.format}"/>
-                  </af:inputText>
+                  </af:outputText>
                 </af:column>
-                <af:column sortProperty="FullName" filterable="true"
-                           sortable="true" headerText="Full Name" id="c31"
-                           width="145" frozen="true" align="left">
-                  <af:inputText value="#{row.bindings.FullName.inputValue}"
-                                label="#{bindings.EmpHomeOfficeWeekScVO1.hints.FullName.label}"
-                                required="#{bindings.EmpHomeOfficeWeekScVO1.hints.FullName.mandatory}"
-                                columns="#{bindings.EmpHomeOfficeWeekScVO1.hints.FullName.displayWidth}"
-                                maximumLength="#{bindings.EmpHomeOfficeWeekScVO1.hints.FullName.precision}"
-                                shortDesc="#{bindings.EmpHomeOfficeWeekScVO1.hints.FullName.tooltip}"
-                                id="it3" readOnly="true"
-                                visible="#{bindings.Dept.inputValue !='Information Technology'}"
-                                contentStyle="color:Black;font-size:small;">
-                    <f:validator binding="#{row.bindings.FullName.validator}"/>
-                  </af:inputText>
-                  <af:goLink text="#{row.bindings.FullName.inputValue}" id="gl1"
-                             visible="#{bindings.Dept.inputValue=='Information Technology'}"
-                             inlineStyle="color:Black;font-size:small;"
-                             rendered="false">
-                    <af:showPopupBehavior popupId=":::p1" alignId=":::f1"
-                                          align="afterStart"/>
-                  </af:goLink>
+                <af:column headerText="Full Name"
+                           id="c20" width="180" align="center">
+                  <af:outputText value="#{row.FullName}" id="ot5"
+                                 inlineStyle="font-size:small"/>
                   <f:facet name="footer">
-                    <af:panelLabelAndMessage label="Total Empolyee" id="plam16"
+                           <af:panelLabelAndMessage label="Total Empolyee" id="plam16"
                                              partialTriggers="soc1"
                                              labelStyle="font-size:small;">
                       <af:outputText value="#{bindings.TotalEmployee.inputValue}"
@@ -435,20 +417,10 @@
                     </af:panelLabelAndMessage>
                   </f:facet>
                 </af:column>
-                <af:column sortProperty="Position" filterable="true"
-                           sortable="true"
-                           headerText="#{bindings.EmpHomeOfficeWeekScVO1.hints.Position.label}"
-                           id="c4" align="left" frozen="true" width="125">
-                  <af:inputText value="#{row.bindings.Position.inputValue}"
-                                label="#{bindings.EmpHomeOfficeWeekScVO1.hints.Position.label}"
-                                required="#{bindings.EmpHomeOfficeWeekScVO1.hints.Position.mandatory}"
-                                columns="#{bindings.EmpHomeOfficeWeekScVO1.hints.Position.displayWidth}"
-                                maximumLength="#{bindings.EmpHomeOfficeWeekScVO1.hints.Position.precision}"
-                                shortDesc="#{bindings.EmpHomeOfficeWeekScVO1.hints.Position.tooltip}"
-                                id="it5" readOnly="true"
-                                contentStyle="color:Black;font-size:small;">
-                    <f:validator binding="#{row.bindings.Position.validator}"/>
-                  </af:inputText>
+                <af:column headerText="Position"
+                           id="c22" width="110" align="center">
+                  <af:outputText value="#{row.Position}" id="ot7"
+                                 inlineStyle="font-size:small"/>
                 </af:column>
                 <af:column headerText="CO Office Total" id="c3" align="center"
                            sortable="true" width="50"

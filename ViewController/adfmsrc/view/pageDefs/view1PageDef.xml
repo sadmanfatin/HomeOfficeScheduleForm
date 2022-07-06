@@ -49,11 +49,6 @@
         <Item Value="FullName"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="EmployeeVO1Iterator" id="EmpNo">
-      <AttrNames>
-        <Item Value="EmpNo"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="EmployeeVO1Iterator" id="Dept">
       <AttrNames>
         <Item Value="Dept"/>
@@ -88,6 +83,7 @@
           <Item Value="Remarks"/>
           <Item Value="EmpWeeklyCoOfficeCount"/>
           <Item Value="HeadApproved"/>
+          <Item Value="SendMail" Binds="SendMail"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -112,21 +108,9 @@
       <NamedData NDName="respAppId" NDValue="#{viewScope.RespAppId}"
                  NDType="java.lang.String"/>
     </methodAction>
-    <attributeValues IterBinding="HomeOfficeWeekListVO1Iterator"
-                     id="D1HomeOfficeCount">
-      <AttrNames>
-        <Item Value="D1OfficeCount"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="HomeOfficeWeekListVO1Iterator" id="WeekId">
       <AttrNames>
         <Item Value="WeekId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="HomeOfficeWeekListVO1Iterator"
-                     id="TotalEmployee">
-      <AttrNames>
-        <Item Value="TotalEmployee"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="HomeOfficeWeekListVO1Iterator"
@@ -270,5 +254,15 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <button IterBinding="EmpHomeOfficeWeekScVO1Iterator" id="SendMail"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="SendMail"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="y"/>
+        <Item Value="n"/>
+      </ValueList>
+    </button>
   </bindings>
 </pageDefinition>

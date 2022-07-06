@@ -648,14 +648,15 @@ public class ManagedBean {
         appM.getHomeOfficeWeekWiseDeptVO1().getCurrentRow().setAttribute("SubmittedToHead","y");
         appM.getHomeOfficeWeekWiseDeptVO1().getCurrentRow().setAttribute("FirstSubmissionToHr","y");
          
-         sendEmailOnSubmitToHr();
+        // sendEmailOnSubmitToHr();
+        sendIndividualMailToSelected();
           
          approveWeekSchedule();
          
         appM.getDBTransaction().commit();
          
         AdfFacesContext.getCurrentInstance().addPartialTarget(this.getSubmitToHrButton());
-       
+        AdfFacesContext.getCurrentInstance().addPartialTarget(this.getEmployeeHomeOfficeDaysOfMonthTable());
 
         //        ViewObject vo = appM.getEmpHomeOfficeWeekScVO1();
         //
@@ -1124,6 +1125,7 @@ public class ManagedBean {
          
         rows = appM.getEmpHomeOfficeWeekScVO1().getAllRowsInRange();
          
+         String sendMail = null;
          
          for(Row row : rows){
              EmpHomeOfficeWeekScRow = (EmpHomeOfficeWeekScVORowImpl)row;
@@ -1140,8 +1142,14 @@ public class ManagedBean {
              weekScheduleTableRow.add(EmpHomeOfficeWeekScRow.getD7());
              weekScheduleTableRows.add(weekScheduleTableRow);
              
+             sendMail = EmpHomeOfficeWeekScRow.getSendMail();
+             
              if(EmpHomeOfficeWeekScRow.getEmailAddress() != null){
-                 emailReceipents.add(EmpHomeOfficeWeekScRow.getEmailAddress());
+                 if(sendMail != null && sendMail.equals("y")){
+                                       
+                       EmpHomeOfficeWeekScRow.setSendMail("n");
+                       emailReceipents.add(EmpHomeOfficeWeekScRow.getEmailAddress());
+                   }
              }
           
              
@@ -1174,6 +1182,97 @@ public class ManagedBean {
          }
        
       //  EmailSender.sendMail(mailDetail ,"sadman_fatin@mj-group.com", "sadman_fatin@mj-group.com");
+       
+    
+    }
+    
+    
+    
+    private void sendIndividualMailToSelected() {
+        
+    
+      
+            
+        
+        // email ID of  Sender. 
+        String sender = (String)appM.getEmployeeVO1().getCurrentRow().getAttribute("EmailAddress");
+        
+        
+        ArrayList<String> weekScheduleTableHeader = new ArrayList<String>();
+        ArrayList<ArrayList<String>> weekScheduleTableRows= new ArrayList<ArrayList<String>>();
+        ArrayList<String> weekScheduleTableRow;
+        String[] tableRow ; 
+        
+        weekScheduleTableHeader.add("Emp No");
+        weekScheduleTableHeader.add("Full Name");
+        weekScheduleTableHeader.add("CO Office Total");
+        
+         for (Map.Entry<String,String> entry : this.getDayWiseDate().entrySet())  {
+             weekScheduleTableHeader.add(entry.getValue());
+         }
+        
+         
+         Row[] rows ; 
+        EmpHomeOfficeWeekScVORowImpl EmpHomeOfficeWeekScRow;
+         
+        rows = appM.getEmpHomeOfficeWeekScVO1().getAllRowsInRange();
+         
+         String sendMailFlag = null;
+        Map<String, String> mailDetail ;      
+         HTMLTableBuilder tableBuilder ;
+         
+         for(Row row : rows){
+             
+           EmpHomeOfficeWeekScRow = (EmpHomeOfficeWeekScVORowImpl)row;
+             
+             if(EmpHomeOfficeWeekScRow.getEmailAddress() != null){
+                 
+                 weekScheduleTableRows= new ArrayList<ArrayList<String>>();
+                  mailDetail = new HashMap<String,String>();       
+                  tableBuilder = new HTMLTableBuilder();
+                 
+                 String emailRecepient = EmpHomeOfficeWeekScRow.getEmailAddress() ;
+                 sendMailFlag  = EmpHomeOfficeWeekScRow.getSendMail();
+                  
+                    if(sendMailFlag  != null && sendMailFlag .equals("y")){
+             
+                         weekScheduleTableRow = new ArrayList<String>();
+                         
+                         weekScheduleTableRow.add(EmpHomeOfficeWeekScRow.getEmpNo().toString());
+                         weekScheduleTableRow.add(EmpHomeOfficeWeekScRow.getFullName());
+                         weekScheduleTableRow.add(EmpHomeOfficeWeekScRow.getEmpWeeklyCoOfficeCount().toString());
+                         weekScheduleTableRow.add(EmpHomeOfficeWeekScRow.getD1());
+                         weekScheduleTableRow.add(EmpHomeOfficeWeekScRow.getD2());
+                         weekScheduleTableRow.add(EmpHomeOfficeWeekScRow.getD3());
+                         weekScheduleTableRow.add(EmpHomeOfficeWeekScRow.getD4());
+                         weekScheduleTableRow.add(EmpHomeOfficeWeekScRow.getD5());
+                         weekScheduleTableRow.add(EmpHomeOfficeWeekScRow.getD6());
+                         weekScheduleTableRow.add(EmpHomeOfficeWeekScRow.getD7());
+                        
+                        weekScheduleTableRows.add(weekScheduleTableRow);
+                       
+                       tableBuilder.buildHtmlTable(weekScheduleTableHeader,weekScheduleTableRows);
+                       String htmlTable =tableBuilder.getHtmlTable();
+                       
+                       mailDetail.put("Subject", "Weekly Office Schedule");
+                       mailDetail.put("BodyText", "Weekly Office Schedule: Week No- "+
+                                                   appM.getHomeOfficeWeekListVO1().getCurrentRow().getAttribute("WeekRange"));
+                       mailDetail.put("WeekTable",htmlTable ) ;
+                       
+                       EmailSender.sendMail(mailDetail ,sender, emailRecepient );
+                           
+                        EmpHomeOfficeWeekScRow.setSendMail("n");
+                        
+                     //  System.out.println(" ================================  emailRecepient "+emailRecepient + "==========================" );
+                     //   System.out.println(" =============================== \n   "+htmlTable);
+                      
+                   }
+             }
+          
+             
+         }
+             
+              
        
     
     }
