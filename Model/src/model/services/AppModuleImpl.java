@@ -65,8 +65,8 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
               
         // System.out.println("========================== in set session values");
        
-         userId = "5219";
-         if(respId==null) respId= "52870";  // 'Home Office All Dept'  responsibility
+//         userId = "5219";
+//         if(respId==null) respId= "52870";  // 'Home Office All Dept'  responsibility
 
         if (userId != null) {
             FacesContext fctx = FacesContext.getCurrentInstance();
@@ -213,5 +213,13 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
      */
     public HomeOfficeWeekWiseDeptVOImpl getHomeOfficeWeekWiseDeptVO2() {
         return (HomeOfficeWeekWiseDeptVOImpl)findViewObject("HomeOfficeWeekWiseDeptVO2");
+    }
+
+    /**
+     * Container's getter for SelectDeselectLOV1.
+     * @return SelectDeselectLOV1
+     */
+    public ViewObjectImpl getSelectDeselectLOV1() {
+        return (ViewObjectImpl)findViewObject("SelectDeselectLOV1");
     }
 }

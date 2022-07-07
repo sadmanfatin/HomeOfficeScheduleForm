@@ -251,6 +251,7 @@
           <Item Value="D7"/>
           <Item Value="EmpNo"/>
           <Item Value="WeekId"/>
+          <Item Value="SendTo"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

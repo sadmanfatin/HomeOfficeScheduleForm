@@ -261,8 +261,21 @@
                         rowSelection="single" id="t2"
                         inlineStyle="height:25.0px;" styleClass="AFStretchWidth"
                         partialTriggers="::cb1 ::cb2 ::soc32 ::soc2 ::soc3 ::cb7 ::cb11">
+                <af:column
+                           id="c23" width="100">
+                  <af:selectOneChoice value="#{row.bindings.SendTo.inputValue}"
+                                      label="#{row.bindings.SendTo.label}"
+                                      required="#{bindings.WeekScDummyVO1.hints.SendTo.mandatory}"
+                                      shortDesc="#{bindings.WeekScDummyVO1.hints.SendTo.tooltip}"
+                                      id="soc17" autoSubmit="true"
+                                      valueChangeListener="#{ManagedBean.selectForMailValueChangeListener}"
+                                      contentStyle="font-size:small;">
+                    <f:selectItems value="#{row.bindings.SendTo.items}"
+                                   id="si19"/>
+                  </af:selectOneChoice>
+                </af:column>
                 <af:column sortProperty="WeekId" sortable="false"
-                           id="c12" width="440" displayIndex="-1"/>
+                           id="c12" width="395" displayIndex="-1"/>
                 <af:column sortProperty="D1" sortable="false"
                       
                            id="c9" width="130"
@@ -386,11 +399,12 @@
                         width="100%" contentDelivery="immediate"
                         clientComponent="true">
                 <af:column headerText="Mail To"
-                           id="c19" align="center" width="40">
+                           id="c19" align="center" width="100">
                   <af:selectBooleanCheckbox value="#{row.bindings.SendMail.inputValue}"
                                             label="#{row.bindings.SendMail.label}"
                                             shortDesc="#{bindings.EmpHomeOfficeWeekScVO1.hints.SendMail.tooltip}"
-                                            id="sbc1" autoSubmit="true"/>
+                                            id="sbc1" autoSubmit="true"
+                                            partialTriggers="soc4 soc7 soc22 soc9 soc20 soc11 soc28 soc1"/>
                 </af:column>
                 <af:column headerText="Emp No"
                            id="c4" width="40" align="center">

@@ -53,6 +53,7 @@ import oracle.jbo.JboException;
 import oracle.jbo.Key;
 import oracle.jbo.Row;
 import oracle.jbo.RowSet;
+import oracle.jbo.RowSetIterator;
 import oracle.jbo.ViewObject;
 import oracle.jbo.domain.Date;
 import oracle.jbo.domain.Number;
@@ -651,9 +652,13 @@ public class ManagedBean {
         // sendEmailOnSubmitToHr();
         sendIndividualMailToSelected();
           
-         approveWeekSchedule();
+      //   approveWeekSchedule();
+         
+         
          
         appM.getDBTransaction().commit();
+         
+         
          
         AdfFacesContext.getCurrentInstance().addPartialTarget(this.getSubmitToHrButton());
         AdfFacesContext.getCurrentInstance().addPartialTarget(this.getEmployeeHomeOfficeDaysOfMonthTable());
@@ -1979,5 +1984,29 @@ public class ManagedBean {
 
     public RichColumn getAllRowSelectorD7() {
         return allRowSelectorD7;
+    }
+
+    public void selectForMailValueChangeListener(ValueChangeEvent valueChangeEvent) {
+        // Add event code here...
+      Integer choiceListValue = (Integer)valueChangeEvent.getNewValue();
+      System.out.println("=========  choiceListValue" +choiceListValue);
+       
+        
+        ViewObject empWeekScVo = appM.getEmpHomeOfficeWeekScVO1();
+        
+        RowSetIterator rs = empWeekScVo.createRowSetIterator("aa");
+        while(rs.hasNext()){
+            Row r = rs.next();
+            if(choiceListValue.intValue() == 1 ){
+                r.setAttribute("SendMail", "y");
+            }            
+            else if (choiceListValue.intValue() == 2 ){
+                            
+                r.setAttribute("SendMail", "n");
+            }
+            
+        }
+       rs.closeRowSetIterator();
+        
     }
 }

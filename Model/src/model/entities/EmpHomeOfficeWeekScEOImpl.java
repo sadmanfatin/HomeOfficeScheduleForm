@@ -586,7 +586,7 @@ public class EmpHomeOfficeWeekScEOImpl extends EntityImpl {
      * @param e the transaction event
      */
     protected void doDML(int operation, TransactionEvent e) {
-       
+        
         Map sessionScope = ADFContext.getCurrent().getSessionScope();
         String user="" ;
         try {
@@ -628,11 +628,12 @@ public class EmpHomeOfficeWeekScEOImpl extends EntityImpl {
                 else{
                    weewWiseDeptVo2Row.setAttribute("SubmittedToHead", "n");
                      weewWiseDeptVo2Row.setAttribute("SubmittedToHr", "n");
-                }
-              
-            
+                }                        
             
                 this.getAppModuleImpl().getHomeOfficeWeekWiseDeptVO1().executeQuery();
+                
+                                
+                                     
                 
             } catch (SQLException f) {
                 System.out.println(f.getMessage());

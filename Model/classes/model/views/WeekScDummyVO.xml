@@ -24,6 +24,10 @@
     Name="HomeOffice2Lov1"
     ViewObjectName="model.lov.HomeOffice2Lov"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="SelectDeselectLOV1"
+    ViewObjectName="model.lov.SelectDeselectLOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_D1"
     ListVOName="HomeOfficeLov1"
@@ -148,6 +152,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="HomeOffice"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SendTo"
+    ListVOName="SelectDeselectLOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SendTo"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SelectOption"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SelectOption"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -339,5 +361,22 @@ from DUAL]]>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SendTo"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LOV_SendTo">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
 </ViewObject>

@@ -429,6 +429,7 @@ public class EmpHomeOfficeWeekScVORowImpl extends ViewRowImpl {
      */
     public void setD1(String value) {
         setAttributeInternal(D1, value);
+        this.setSendMail("y");
     }
 
     /**
@@ -445,6 +446,7 @@ public class EmpHomeOfficeWeekScVORowImpl extends ViewRowImpl {
      */
     public void setD2(String value) {
         setAttributeInternal(D2, value);
+        this.setSendMail("y");
     }
 
     /**
@@ -461,6 +463,7 @@ public class EmpHomeOfficeWeekScVORowImpl extends ViewRowImpl {
      */
     public void setD3(String value) {
         setAttributeInternal(D3, value);
+        this.setSendMail("y");
     }
 
     /**
@@ -477,6 +480,7 @@ public class EmpHomeOfficeWeekScVORowImpl extends ViewRowImpl {
      */
     public void setD4(String value) {
         setAttributeInternal(D4, value);
+        this.setSendMail("y");
     }
 
     /**
@@ -493,6 +497,7 @@ public class EmpHomeOfficeWeekScVORowImpl extends ViewRowImpl {
      */
     public void setD5(String value) {
         setAttributeInternal(D5, value);
+        this.setSendMail("y");
     }
 
     /**
@@ -509,6 +514,7 @@ public class EmpHomeOfficeWeekScVORowImpl extends ViewRowImpl {
      */
     public void setD6(String value) {
         setAttributeInternal(D6, value);
+        this.setSendMail("y");
     }
 
     /**
@@ -526,6 +532,7 @@ public class EmpHomeOfficeWeekScVORowImpl extends ViewRowImpl {
      */
     public void setD7(String value) {
         setAttributeInternal(D7, value);
+        this.setSendMail("y");
     }
 
 
