@@ -265,5 +265,10 @@
         <Item Value="n"/>
       </ValueList>
     </button>
+    <attributeValues IterBinding="HomeOfficeWeekListVO1Iterator" id="TotalEmployee">
+      <AttrNames>
+        <Item Value="TotalEmployee"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
