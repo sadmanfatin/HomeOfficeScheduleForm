@@ -643,25 +643,35 @@ public class ManagedBean {
             showMessage("Any day's value can't be empty for any employee !", "info");
             return;
         }
-       
-       
-        appM.getHomeOfficeWeekWiseDeptVO1().getCurrentRow().setAttribute("SubmittedToHr","y");
-        appM.getHomeOfficeWeekWiseDeptVO1().getCurrentRow().setAttribute("SubmittedToHead","y");
-        appM.getHomeOfficeWeekWiseDeptVO1().getCurrentRow().setAttribute("FirstSubmissionToHr","y");
+   
+ //  System.out.println("==== week id ============  "  +   appM.getHomeOfficeWeekWiseDeptVO1().getCurrentRow().getAttribute("WeekId"));
+   
          
         // sendEmailOnSubmitToHr();
         sendIndividualMailToSelected();
           
-      //   approveWeekSchedule();
+     
          
          
+       appM.getDBTransaction().commit();  
+      
+      
+        appM.getHomeOfficeWeekWiseDeptVO1().getCurrentRow().setAttribute("SubmittedToHr","y");
+        appM.getHomeOfficeWeekWiseDeptVO1().getCurrentRow().setAttribute("SubmittedToHead","y");
+        appM.getHomeOfficeWeekWiseDeptVO1().getCurrentRow().setAttribute("FirstSubmissionToHr","y");
+      
+        appM.getDBTransaction().commit();    
+        
+        approveWeekSchedule();
+        
+        appM.getEmpHomeOfficeWeekScVO1().executeQuery();
          
-        appM.getDBTransaction().commit();
-         
-         
-         
+        AdfFacesContext.getCurrentInstance().addPartialTarget(this.getSubmitToHeadButton());
+        AdfFacesContext.getCurrentInstance().addPartialTarget(this.getSubmitToHrButton());
         AdfFacesContext.getCurrentInstance().addPartialTarget(this.getSubmitToHrButton());
         AdfFacesContext.getCurrentInstance().addPartialTarget(this.getEmployeeHomeOfficeDaysOfMonthTable());
+        
+        
 
         //        ViewObject vo = appM.getEmpHomeOfficeWeekScVO1();
         //
@@ -2007,6 +2017,8 @@ public class ManagedBean {
             
         }
        rs.closeRowSetIterator();
+       
+       AdfFacesContext.getCurrentInstance().addPartialTarget(this.getEmployeeHomeOfficeDaysOfMonthTable());
         
     }
 }

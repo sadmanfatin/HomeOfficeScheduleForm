@@ -1,6 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <References xmlns="http://xmlns.oracle.com/adf/jndi">
-   <Reference name="Conn1" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="Conn1" xmlns="">
+   <Reference name="Conn1" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="Conn1"
+              xmlns="">
       <Factory className="oracle.jdeveloper.db.adapter.DatabaseProviderFactory"/>
       <RefAddresses>
          <StringRefAddr addrType="sid">
